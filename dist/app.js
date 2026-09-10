@@ -20,15 +20,42 @@ const $=s=>document.querySelector(s);
 let visible=projects,current=null,returnFocus=null;
 const detail=$('#detail'),panel=$('#detail-panel'),lightbox=$('#lightbox');
 function pauseWithin(el){el.querySelectorAll('video').forEach(v=>v.pause());}
-function render(){ $('#projects').innerHTML=visible.map(p=>`<button class="project ${p.wide?'wide':''}" data-id="${p.id}" aria-label="查看${esc(p.title)}"><div class="art ${p.editorial?'editorial-cover '+p.id:''}">${p.editorial?`${p.portrait?`<img class="editorial-portrait" src="media/${esc(p.portrait)}" alt="武大靖人物照片" width="245" height="272" loading="lazy">`:""}<div class="editorial-text"><span>${esc(p.editorial.kicker)}</span><strong>${p.editorial.title}</strong><small>${esc(p.editorial.foot)}</small></div>`:`<img src="media/${p.cover}.jpg" alt="${esc(p.sub)}" loading="lazy">`}<span class="project-tag">${p.tag}</span><span class="project-open" aria-hidden="true">↗</span></div><div class="project-info"><div><h3>${p.title}</h3><p>${p.sub}</p></div><span class="project-number mono">${String(projects.indexOf(p)+1).padStart(2,'0')} / ${String(projects.length).padStart(2,'0')}</span></div></button>`).join('');$('#filter-status').textContent=`显示 ${visible.length} 个项目`; }
-function tab(which){ pauseWithin(panel); document.querySelectorAll('[data-tab]').forEach(b=>{const active=b.dataset.tab===which;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});panel.setAttribute('aria-labelledby',`tab-${which}`);panel.innerHTML=which==='overview'?current.steps.map(([h,p])=>`<div class="case-step"><h3>${h}</h3><p>${p}</p></div>`).join('')+(current.note?`<p class="case-note">${current.note}</p>`:''):current.material(); }
-function openProject(id){current=projects.find(p=>p.id===id);if(!current)return;if(!detail.open){returnFocus=document.activeElement;pauseWithin(document);$('#hero-video').closest('.hero-film').classList.remove('playing');$('#motion-toggle').setAttribute('aria-pressed','false');$('#motion-toggle').textContent='播放动态预览 ▶';detail.showModal();document.body.classList.add('modal-open');}$('#detail-index').textContent=`PROJECT ${String(projects.indexOf(current)+1).padStart(2,'0')} / ${String(projects.length).padStart(2,'0')}`;$('#detail-meta').textContent=current.tag;$('#detail-title').textContent=current.title;$('#detail-intro').textContent=current.intro;$('#detail-facts').innerHTML=current.facts.map(([h,p])=>`<div><span>${h}</span><p>${p}</p></div>`).join('');$('#detail-count').textContent=`${visible.indexOf(current)+1} / ${visible.length} SELECTED`;tab('overview');detail.scrollTop=0;$('#close-detail').focus();}
+
+function render(){
+  $('#projects').innerHTML=visible.map(p=>{const number=String(projects.indexOf(p)+1).padStart(2,'0');const v=caseVisuals[p.id];return `<button class="project ${p.wide?'wide':''}" data-id="${p.id}" aria-label="查看${esc(p.title)}"><div class="card-register" aria-hidden="true"><span>CASE / ${number}</span><span>${esc(v.word)}</span><i>＋</i></div><div class="art ${p.editorial?'editorial-cover '+p.id:''}">${p.editorial?`${p.portrait?`<img class="editorial-portrait" src="media/${esc(p.portrait)}" alt="武大靖人物照片" width="245" height="272" loading="lazy">`:''}<div class="editorial-text"><span>${esc(p.editorial.kicker)}</span><strong>${p.editorial.title}</strong><small>${esc(p.editorial.foot)}</small></div>`:`<img src="media/${p.cover}.jpg" alt="${esc(p.sub)}" loading="lazy">`}<span class="project-tag">${esc(p.tag)}</span><span class="project-open" aria-hidden="true">↗</span></div><div class="project-info"><div><h3>${esc(p.title)}</h3><p>${esc(p.sub)}</p>${p.wide?`<p class="card-intro">${esc(p.intro)}</p><span class="card-keywords">${v.keywords.map(esc).join(' / ')}</span>`:''}</div><span class="project-number mono">${number} / ${String(projects.length).padStart(2,'0')}</span></div></button>`}).join('');
+  $('#filter-status').textContent=`显示 ${visible.length} 个项目`;
+}
+function tab(which){
+  pauseWithin(panel);
+  document.querySelectorAll('[data-tab]').forEach(b=>{const active=b.dataset.tab===which;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
+  panel.setAttribute('aria-labelledby',`tab-${which}`);panel.dataset.view=which;panel.dataset.kind=caseVisuals[current.id].kind;
+  panel.innerHTML=which==='overview'?caseOverview(current):`<div class="material-register"><span class="mono">MATERIAL ARCHIVE / 作品材料</span><span aria-hidden="true">${esc(caseVisuals[current.id].word)} ↗</span></div>`+current.material();
+  if(which==='material')decorateMaterials(current,panel);
+  const controlsHeight=detail.querySelector('.dialog-bar').offsetHeight+detail.querySelector('.detail-tabs').offsetHeight;
+  const panelTop=panel.getBoundingClientRect().top-detail.getBoundingClientRect().top+detail.scrollTop-detail.clientTop;
+  detail.scrollTop=Math.max(0,panelTop-controlsHeight);
+}
+function openProject(id){
+  const project=projects.find(p=>p.id===id);if(!project)return;current=project;
+  if(!detail.open){returnFocus=document.activeElement;pauseWithin(document);detail.showModal();document.body.classList.add('modal-open');}
+  const number=String(projects.indexOf(current)+1).padStart(2,'0'),v=caseVisuals[current.id];
+  detail.dataset.project=current.id;detail.dataset.kind=v.kind;
+  $('#detail-index').textContent=`PROJECT ${number} / ${String(projects.length).padStart(2,'0')}`;
+  $('#case-number').textContent=number;$('#detail-meta').textContent=current.tag;$('#detail-title').textContent=current.title;$('#detail-intro').textContent=current.intro;
+  $('#case-keywords').innerHTML=v.keywords.map(k=>`<span>${esc(k)}</span>`).join('');
+  $('#case-cover').innerHTML=`<button class="case-cover-image" data-image="media/${v.image}" data-caption="${esc(v.caption)}" aria-label="查看${esc(v.caption)}"><img src="media/${v.image}" alt="${esc(v.caption)}"></button><span class="case-cover-word" aria-hidden="true">${esc(v.word)}</span><figcaption><span class="mono">FIG. ${number}</span><span>${esc(v.caption)}</span><span aria-hidden="true">↗</span></figcaption>`;
+  $('#detail-facts').innerHTML=current.facts.map(([h,p],i)=>`<div><span><i aria-hidden="true">0${i+1}</i> ${esc(h)}</span><p>${esc(p)}</p></div>`).join('');
+  $('#detail-count').textContent=`${String(visible.indexOf(current)+1).padStart(2,'0')} / ${String(visible.length).padStart(2,'0')} SELECTED`;
+  const next=visible[(visible.indexOf(current)+1)%visible.length];$('#next-title').textContent=next.title;
+  $('#next-project').setAttribute('aria-label',`下一个项目：${next.title}`);
+  tab('overview');detail.scrollTop=0;$('#close-detail').focus({preventScroll:true});
+}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});visible=b.dataset.filter==='all'?projects:projects.filter(p=>p.categories.includes(b.dataset.filter));render();}));
 $('#projects').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b)openProject(b.dataset.id);});
 $('#close-detail').addEventListener('click',()=>detail.close());detail.addEventListener('close',()=>{pauseWithin(detail);document.body.classList.remove('modal-open');returnFocus?.focus();});detail.addEventListener('click',e=>{if(e.target===detail){const r=detail.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)detail.close();}});
 document.querySelectorAll('[data-tab]').forEach((b,i)=>{b.addEventListener('click',()=>tab(b.dataset.tab));b.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]')];const next=e.key==='Home'?tabs[0]:e.key==='End'?tabs[1]:tabs[1-i];tab(next.dataset.tab);next.focus();}});});
 $('#next-project').addEventListener('click',()=>openProject(visible[(visible.indexOf(current)+1)%visible.length].id));
-panel.addEventListener('click',e=>{const b=e.target.closest('[data-image]');if(!b)return;$('#large-image').src=b.dataset.image;$('#large-image').alt=b.dataset.caption;$('#large-caption').textContent=b.dataset.caption;lightbox.showModal();});$('#close-image').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close();});
+detail.addEventListener('click',e=>{const b=e.target.closest('[data-image]');if(!b)return;$('#large-image').src=b.dataset.image;$('#large-image').alt=b.dataset.caption;$('#large-caption').textContent=b.dataset.caption;lightbox.showModal();});$('#close-image').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close();});
 const heroVideo=$('#hero-video'),motionButton=$('#motion-toggle');
 let heroUserPaused=false;
 function syncHero(){const playing=!heroVideo.paused&&!heroVideo.ended;heroVideo.closest('.hero-film').classList.toggle('playing',playing);motionButton.setAttribute('aria-pressed',String(playing));motionButton.textContent=playing?'暂停动态预览 Ⅱ':'播放动态预览 ▶';}
@@ -46,3 +73,6 @@ playHero();
 
 const mountainStage=document.getElementById('hero-stage');
 if(mountainStage&&window.matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches){let frame=0;mountainStage.addEventListener('pointermove',e=>{if(frame)cancelAnimationFrame(frame);const rect=mountainStage.getBoundingClientRect();const x=(e.clientX-rect.left)/rect.width-.5,y=(e.clientY-rect.top)/rect.height-.5;frame=requestAnimationFrame(()=>{mountainStage.style.setProperty('--mountain-x',`${x*12}px`);mountainStage.style.setProperty('--mountain-y',`${y*8}px`);});});mountainStage.addEventListener('pointerleave',()=>{cancelAnimationFrame(frame);mountainStage.style.setProperty('--mountain-x','0px');mountainStage.style.setProperty('--mountain-y','0px');});}
+
+$('#case-home').addEventListener('click',e=>{e.preventDefault();detail.close();});
+panel.addEventListener('click',e=>{if(e.target.closest('[data-view-material]')){tab('material');$('#tab-material').focus({preventScroll:true});}});
