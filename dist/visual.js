@@ -13,6 +13,7 @@ const caseVisuals = {
 };
 
 function caseOverview(project) {
+  if(project.id==='noodle')return noodleOverview(project);
   const v=caseVisuals[project.id];
   return `<section class="case-thesis"><div class="thesis-marker"><span class="mono">THE APPROACH / 创作线索</span><span aria-hidden="true">↗</span></div><h3>${esc(v.statement)}</h3><div class="thesis-rule" aria-hidden="true"><i></i><span>${esc(v.word)}</span><i></i></div></section><div class="case-contactsheet">${v.images.map(([file,caption],i)=>`<figure><button class="image-button" data-image="media/${esc(file)}" data-caption="${esc(caption)} · ${esc(project.title)}" aria-label="查看${esc(caption)}"><img src="media/${esc(file)}" alt="${esc(caption)}" loading="lazy"></button><figcaption><span class="mono">${String(i+1).padStart(2,'0')}</span>${esc(caption)}<span aria-hidden="true">↗</span></figcaption></figure>`).join('')}</div><div class="case-process"><div class="process-heading"><span class="mono">PROCESS / 内容展开</span><span aria-hidden="true">＋</span></div>${project.steps.map(([h,p],i)=>`<section class="case-step"><span class="step-index" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><h3>${esc(h)}</h3><p>${esc(p)}</p></section>`).join('')}</div>${project.note?`<aside class="case-note"><span class="mono">PROJECT NOTE / 项目说明</span><p>${esc(project.note)}</p></aside>`:''}<button class="view-material" data-view-material><span>展开作品材料</span><span class="mono">FILM / IMAGE / DOCUMENT</span><span aria-hidden="true">↗</span></button>`;
 }
