@@ -1,21 +1,8 @@
-# RY-
-杨荣炜 Ryan Yang的作品集网站
+# 杨荣炜 Ryan YANG｜作品集
 
-现有网站：https://ryan-yang-portfolio.workspace-061399.chatgpt.site/
+正式版与用户确认的 V20 测试版一致。
 
-## 项目内容
+- GitHub Pages：https://yangrongwei800-lang.github.io/RY-/dist/
+- 线上网站：https://ryan-yang-portfolio.workspace-061399.chatgpt.site/
 
-本仓库保存作品集第 12 版的静态网站文件，包含页面、样式、交互脚本、图片、视频、字体及 PDF 材料。
-
-- `dist/index.html`：网站入口
-- `dist/style.css`：页面样式
-- `dist/app.js`：作品筛选、项目详情、图片预览等交互
-- `dist/media/`：图片与视频
-- `dist/documents/`：作品相关 PDF
-- `dist/fonts/`：字体和随附许可说明
-
-## 预览与部署
-
-这是纯静态网站，无需安装依赖或构建。使用任意静态网站服务器，将网站根目录设为 `dist` 即可预览或部署。
-
-本次提交仅将网站文件保存到 GitHub，未启用 GitHub Pages。原有网站地址继续使用。
+入口为 dist/index.html。完整保留页面内容、动画、字体、图片、视频和项目材料。纯静态网站，无需构建。

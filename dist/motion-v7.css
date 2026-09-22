@@ -1,0 +1,24 @@
+/* Preview only: crisp focus corners, restrained hatch accents, full-height left field. */
+.motion-v7 .focus-frame{filter:none;z-index:6;color:#e1edff}
+.motion-v7 .focus-frame i{opacity:.88;box-shadow:none}
+.motion-v7 .project:is([data-id="planning"],[data-id="posters"],[data-id="portrait-interview"]) .focus-frame{color:#6a849d}
+.motion-v7 .project:is([data-id="planning"],[data-id="posters"],[data-id="portrait-interview"]):is(:hover,:focus-visible) .focus-frame{color:#315a82}
+.motion-v7 .project:is(:hover,:focus-visible) .focus-frame i:nth-child(1){transform:translate(4px,4px)}
+.motion-v7 .project:is(:hover,:focus-visible) .focus-frame i:nth-child(2){transform:translate(-4px,4px)}
+.motion-v7 .project:is(:hover,:focus-visible) .focus-frame i:nth-child(3){transform:translate(-4px,-4px)}
+.motion-v7 .project:is(:hover,:focus-visible) .focus-frame i:nth-child(4){transform:translate(4px,-4px)}
+.motion-v7 .works{background-image:none}
+.motion-v7 .works:before,.motion-v7 .works:after{top:0;bottom:0;width:1px;background:#73879e24;mask-image:linear-gradient(transparent,#000 7%,#000 92%,transparent)}
+.motion-v7 .works:before{right:var(--pad)}.motion-v7 .works:after{left:var(--pad)}
+.motion-v7 .works .section-heading:before{width:23%;height:90px;top:-12px;border-color:#6d829d15;background:repeating-linear-gradient(135deg,transparent 0 20px,#70849c20 20px 21px);mask-image:linear-gradient(90deg,transparent,#000)}
+.motion-v7 .project{position:relative}
+.motion-v7 .project:nth-child(4n):not(:last-child):after{content:"";position:absolute;right:0;bottom:-29px;width:100px;height:12px;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 9px,#657d9630 9px 10px)}
+.motion-v7 .about{padding-bottom:56px}
+.motion-v7 .about-name{align-self:stretch;display:flex;flex-direction:column;min-height:560px}
+.motion-v7 .about-left-atmosphere{inset:0 0 30px}
+.motion-v7 .about-focus-study{width:100%;margin-top:auto;padding-top:32px;flex-wrap:nowrap}
+.motion-v7 .about-focus-study svg{display:none}
+.motion-v7 .experience>div{align-items:center}
+.motion-v7 .experience>div>p{margin:0}
+@media(max-width:800px){.motion-v7 .about-name{min-height:510px}.motion-v7 .about{padding-bottom:48px}.motion-v7 .works .section-heading:before{width:30%;height:75px;top:0}}
+@media(max-width:520px){.motion-v7 .about-name{min-height:490px}.motion-v7 .project:nth-child(4n):not(:last-child):after{bottom:-21px;height:10px;width:72px}.motion-v7 .works .section-heading:before{width:26%;height:65px}}

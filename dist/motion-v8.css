@@ -1,0 +1,18 @@
+.motion-v8 .project-grid{align-items:stretch}
+.motion-v8 .project:not(.wide){display:flex;flex-direction:column;align-self:stretch}
+.motion-v8 .project:not(.wide)>.art{aspect-ratio:1.65;min-height:340px;flex-shrink:0;height:auto}
+.motion-v8 .project:not(.wide)>.project-info{flex:1;align-items:flex-start}
+.motion-v8 .project .editorial-cover.portrait-interview{aspect-ratio:1.65;min-height:340px;grid-template-columns:minmax(0,1fr) clamp(100px,12vw,160px);grid-template-areas:"copy portrait";padding:64px 24px 40px}
+.motion-v8 .project:nth-child(4n):not(:last-child):after{display:none}
+.motion-v8 .archive-band{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:26px;min-height:82px;color:#526c87;position:relative;isolation:isolate;margin-block:4px}
+.motion-v8 .archive-band>span{font-size:11px;letter-spacing:.06em}
+.motion-v8 .archive-band .archive-line{height:1px;background:#8195aa4a;position:relative}
+.motion-v8 .archive-line:before,.motion-v8 .archive-line:after{content:"+";position:absolute;top:-8px;color:#8297ae;font-size:13px}.motion-v8 .archive-line:before{left:0}.motion-v8 .archive-line:after{right:0}
+.motion-v8 .archive-band:before{content:"";position:absolute;z-index:-1;width:130px;height:28px;right:0;top:-8px;background:repeating-linear-gradient(135deg,transparent 0 12px,#7187a528 12px 13px)}
+.motion-v8 .archive-ticks{position:absolute;left:-18px;top:20px;width:8px;height:42px;background:repeating-linear-gradient(180deg,#748da9 0 1px,transparent 1px 10px);opacity:.4}
+.motion-v8 .archive-band.archive-lit .archive-ticks{animation:archive-register 1.6s ease-out both}
+@keyframes archive-register{0%{opacity:.3;clip-path:inset(0 0 100%)}40%{opacity:1;clip-path:inset(0)}100%{opacity:.4;clip-path:inset(0)}}
+@media(min-width:521px) and (max-width:900px){.motion-v8 .project-grid{grid-template-columns:1fr}.motion-v8 .project.wide{grid-column:1}.motion-v8 .project:not(.wide)>.art{min-height:340px}.motion-v8 .editorial-cover>.editorial-portrait{width:100%;justify-self:end}}
+@media(max-width:520px){.motion-v8 .project:not(.wide)>.art{min-height:0;aspect-ratio:1.5}.motion-v8 .project .editorial-cover.portrait-interview{min-height:310px;aspect-ratio:auto;grid-template-columns:minmax(0,1fr) 100px;padding:60px 20px 36px;gap:15px}.motion-v8 .archive-band{gap:14px;min-height:64px}.motion-v8 .archive-band>span{font-size:9px;letter-spacing:0}.motion-v8 .archive-band>span:last-child{max-width:120px;text-align:right}.motion-v8 .archive-band:before{width:70px;height:18px;top:0}.motion-v8 .archive-ticks{left:-12px;width:5px}}
+.motion-v8.motion-static .archive-band.archive-lit .archive-ticks{animation:none}
+@media(prefers-reduced-motion:reduce){.motion-v8 .archive-band.archive-lit .archive-ticks{animation:none}}

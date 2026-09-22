@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v18');const v18=document.querySelector('.preview-controls');v18.querySelector('span').textContent='MOTION / 18';v18.setAttribute('aria-label','第十八版新媒体能力说明测试');v18.querySelector('a').href='motion-preview-v17.html';v18.querySelector('a').textContent='对比 V17 ↗';

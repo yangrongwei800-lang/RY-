@@ -1,0 +1,13 @@
+/* Change orientation only while fully closed and invisible. The second opening
+   grows directly as a diamond, without any visible rotation. */
+.motion-v13 #hero-stage .geometry-active .geo-box{animation-name:hero-square-close-diamond-open;animation-duration:4600ms;animation-iteration-count:1}
+@keyframes hero-square-close-diamond-open{
+ 0%{width:64px;height:64px;opacity:0;transform:rotate(0deg)}
+ 4.955%{opacity:.75}
+ 15.695%{width:50px;height:50px;opacity:.65}
+ 33.045%,49.999%{width:0;height:0;opacity:0;transform:rotate(0deg)}
+ 50%{width:0;height:0;opacity:0;transform:rotate(45deg)}
+ 53%{opacity:.7;transform:rotate(45deg)}
+ 63%,76%,80%{width:56px;height:56px;opacity:.75;transform:rotate(45deg)}
+ 98%,100%{width:0;height:0;opacity:0;transform:rotate(45deg)}
+}

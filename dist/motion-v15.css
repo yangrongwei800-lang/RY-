@@ -1,0 +1,4 @@
+.planning-material-lead{max-width:850px;line-height:1.85;margin:0 0 12px;color:#344f67}
+.planning-material-note{font-size:13px;line-height:1.7;color:#61788d;margin:0 0 28px}
+@media(max-width:600px){.motion-v15 #detail-panel:has(.planning-material-lead) .media-heading{grid-template-columns:32px minmax(0,1fr);gap:10px}.motion-v15 #detail-panel:has(.planning-material-lead) .media-heading>h3+span{grid-column:2;max-width:none;width:auto;white-space:normal}}
+

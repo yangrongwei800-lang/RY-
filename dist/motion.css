@@ -1,0 +1,56 @@
+/* Motion study 01: geometry contracts, then content settles into the grid. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+.motion-preview .hero-title{mix-blend-mode:normal;text-shadow:0 2px 32px #05102055}
+.motion-preview .hero-landscape{opacity:.83}
+.motion-preview .hero-shade{background:linear-gradient(180deg,#07132255,transparent 36%,#06122522 65%,#061225c9)}
+.motion-preview .hero-register{transform:none;background:#10223be6;color:#bdd1f6;border-color:#8da9d66b;box-shadow:none;right:8%;bottom:22%;padding:12px 16px}
+.motion-preview .hero-register i{display:none}
+.motion-preview .hero-halftone{opacity:.1}
+.motion-geometry{position:absolute;inset:0;pointer-events:none;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(3,1fr);padding:70px 5%;overflow:hidden;color:#aac6ee}
+.geo-mark{display:grid;place-items:center;position:relative;opacity:.6}
+.geo-mark:nth-child(n+8):nth-child(-n+11){visibility:hidden}
+.geo-box{position:absolute;width:48px;height:48px;border:1px solid #b9d0f522;background:#9dbefa06}
+.geo-box i{position:absolute;width:7px;height:7px;background:linear-gradient(currentColor,currentColor) center/1px 7px no-repeat,linear-gradient(currentColor,currentColor) center/7px 1px no-repeat}
+.geo-box i:nth-child(1){left:-4px;top:-4px}.geo-box i:nth-child(2){right:-4px;top:-4px}.geo-box i:nth-child(3){left:-4px;bottom:-4px}.geo-box i:nth-child(4){right:-4px;bottom:-4px}
+.geo-point{font:12px/1 monospace;opacity:.65}
+.geo-box{width:0;height:0;opacity:0}
+.geometry-active .geo-box{animation:geometry-contract 1050ms var(--motion-ease) both;animation-delay:var(--geo-delay,0ms)}
+.geometry-active .geo-point{animation:point-settle 1050ms var(--motion-ease) both;animation-delay:var(--geo-delay,0ms)}
+@keyframes geometry-contract{0%{width:54px;height:54px;opacity:0;transform:rotate(0)}18%{opacity:.8}40%{width:36px;height:36px;opacity:.65;transform:rotate(0)}100%{width:0;height:0;opacity:0;transform:rotate(0)}}
+@keyframes point-settle{0%,45%{opacity:0;transform:scale(.4)}100%{opacity:.65;transform:scale(1)}}
+.symbol-field{position:absolute;right:0;bottom:8%;width:48%;height:47%;pointer-events:none;z-index:1;opacity:.65;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 85%,transparent)}
+.motion-preview .hero-title,.motion-preview .corner-label,.motion-preview .hero-register{z-index:2}
+.motion-preview .position{padding-block:112px}
+.motion-preview .works{padding-top:110px}
+.motion-preview .section-heading{padding-bottom:12px}
+.motion-preview .case-hero{position:relative;isolation:isolate}
+.motion-preview .case-hero>.motion-geometry{padding:18px;grid-template-columns:repeat(6,1fr);opacity:.45;z-index:0}
+.motion-preview .case-heading,.motion-preview .case-cover{position:relative;z-index:1}
+.motion-preview .case-heading{padding-top:64px;padding-bottom:60px}
+.motion-preview .case-contactsheet{margin-block:46px 60px}
+.motion-preview .noodle-metrics strong{font-variant-numeric:tabular-nums;min-height:1.3em}
+.motion-preview .noodle-metrics>div{padding-block:36px}
+.motion-preview .noodle-metrics{margin-block:44px}
+.motion-preview .project .card-register i{display:inline-block;transition:transform .48s var(--motion-ease),color .3s}
+.motion-preview .project:hover .card-register i,.motion-preview .project:focus-visible .card-register i{transform:rotate(90deg);color:#315eaa}
+.motion-preview .project-open{transition:background .3s,box-shadow .35s,translate .5s var(--motion-ease)}
+.motion-preview .project:hover .project-open{translate:-3px -3px;box-shadow:3px 3px 0 #7697c2}
+.motion-preview .filters button{transition:background .3s,border-color .3s,color .3s,translate .35s var(--motion-ease)}
+.motion-preview .filters button:active{translate:0 2px}
+.motion-preview .detail-tabs button{transition:background .25s,color .25s}
+.motion-preview .next-arrow,.motion-preview .noodle-profile-cta>span,.motion-preview .view-material>span:last-child{display:inline-block;transition:transform .45s var(--motion-ease)}
+.motion-preview #next-project:hover .next-arrow,.motion-preview .noodle-profile-link:hover .noodle-profile-cta>span,.motion-preview .view-material:hover>span:last-child{transform:translate(4px,-4px)}
+.motion-preview #close-detail span{display:inline-block;transition:transform .4s var(--motion-ease)}
+.motion-preview #close-detail:hover span{transform:rotate(90deg)}
+.motion-preview .contact{overflow:hidden;padding-top:90px;padding-bottom:48px}
+.motion-preview .contact>.symbol-field{width:40%;height:80%;bottom:0;opacity:.24;z-index:-1}
+.motion-preview .contact>a{max-width:100%;position:relative;z-index:1}
+.motion-preview .contact>a>span{color:#9ebfff}
+.preview-controls{position:fixed;right:20px;bottom:18px;z-index:20;display:flex;gap:0;align-items:center;background:#0b192bea;border:1px solid #7390b36b;color:#e4edfa;box-shadow:0 5px 24px #0002;backdrop-filter:blur(16px);font-size:12px}
+.preview-controls>span{padding:11px 14px;color:#a4bbdc;font-family:var(--type-mono)}
+.preview-controls button{padding:11px 14px;border-left:1px solid #7390b34d;min-height:42px;transition:background .2s}
+.preview-controls button:hover{background:#26405e}.preview-controls button[aria-pressed=true]{background:#36557e}
+.modal-open .preview-controls{visibility:hidden}
+@media(max-width:800px){.motion-preview .position{padding-block:72px}.motion-preview .works{padding-top:72px}.motion-preview .case-heading{padding-top:32px;padding-bottom:32px}.motion-geometry{padding:70px 12px;grid-template-columns:repeat(4,1fr)}.geo-mark:nth-child(n+13){display:none}.geo-mark:nth-child(n+6):nth-child(-n+7){visibility:hidden}.symbol-field{width:65%;height:40%;opacity:.45}.motion-preview .hero-register{right:8%;bottom:21%}.motion-preview .case-contactsheet{margin-block:30px 40px}.motion-preview .noodle-metrics{margin-block:30px}.motion-preview .noodle-metrics>div{padding-block:26px}.preview-controls{right:10px;bottom:10px;font-size:11px}.preview-controls>span{display:none}.preview-controls button{padding:10px}.motion-preview .contact{padding-top:60px}}
+@media(prefers-reduced-motion:reduce){.motion-geometry .geo-box,.motion-geometry .geo-point{animation:none!important}.motion-preview *{scroll-behavior:auto!important}}
+.motion-static *,.motion-static *:before,.motion-static *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}

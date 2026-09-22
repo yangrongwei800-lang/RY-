@@ -1,0 +1,19 @@
+/* One continuous path: contract, reopen from the same anchor, rotate, contract. */
+.motion-v12 #hero-stage .geometry-active .geo-box{animation-name:hero-reopen-rotate-close;animation-duration:4600ms;animation-iteration-count:1}
+.motion-v12 #hero-stage .geometry-active .geo-point{animation-name:hero-anchor-return;animation-duration:4600ms;animation-iteration-count:1}
+@keyframes hero-reopen-rotate-close{
+ 0%{width:64px;height:64px;opacity:0;transform:rotate(0deg)}
+ 4.955%{opacity:.75}
+ 15.695%{width:50px;height:50px;opacity:.65}
+ 33.045%,50%{width:0;height:0;opacity:0;transform:rotate(0deg)}
+ 53%{opacity:.7}
+ 63%{width:56px;height:56px;opacity:.75;transform:rotate(0deg)}
+ 76%,80%{width:56px;height:56px;opacity:.75;transform:rotate(45deg)}
+ 98%,100%{width:0;height:0;opacity:0;transform:rotate(45deg)}
+}
+@keyframes hero-anchor-return{
+ 0%,23.955%{opacity:0;transform:scale(.5)}
+ 35.11%,50%{opacity:.75;transform:scale(1)}
+ 59%,84%{opacity:0;transform:scale(.5)}
+ 98%,100%{opacity:.75;transform:scale(1)}
+}

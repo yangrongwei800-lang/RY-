@@ -1,0 +1,10 @@
+/* Still, grainy frost dissolves in place. No sweeping highlight or lateral mask. */
+.motion-v10 .frost-reveal{inset:0;background:#dce5ef1f;mask-image:none;will-change:opacity,backdrop-filter}
+.motion-v10 .frost-reveal:before{display:none}
+.motion-v10 #hero-stage .geometry-active .geo-box{animation-name:hero-contract-twice;animation-duration:2300ms;animation-iteration-count:2}
+.motion-v10 #hero-stage .geometry-active .geo-point{animation-name:hero-point-twice;animation-duration:2300ms;animation-iteration-count:2}
+/* Preserve the original 1.9 s gesture, then hold for 0.4 s before its second pass. */
+@keyframes hero-contract-twice{0%{width:64px;height:64px;opacity:0}9.91%{opacity:.75}31.39%{width:50px;height:50px;opacity:.65}66.09%,100%{width:0;height:0;opacity:0}}
+@keyframes hero-point-twice{0%,47.91%{opacity:0;transform:scale(.5)}70.22%,100%{opacity:.75;transform:scale(1)}}
+.motion-v10.motion-static #hero-stage .geo-box,.motion-v10.motion-static #hero-stage .geo-point{animation:none!important}
+@media(prefers-reduced-motion:reduce){.motion-v10 #hero-stage .geo-box,.motion-v10 #hero-stage .geo-point{animation:none!important}}

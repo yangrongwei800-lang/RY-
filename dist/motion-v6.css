@@ -1,0 +1,15 @@
+/* Cool mist canvas, preserving the V5 hatch placement and white project modules. */
+.motion-v6 .works{background-color:#dfe5eb;color:#25394c;background-image:linear-gradient(90deg,transparent calc(100% - 1px),#687c931a 0)}
+.motion-v6 .works:before{background:repeating-linear-gradient(135deg,transparent 0 14px,#667f992b 14px 15px)}
+.motion-v6 .works:after{background:repeating-linear-gradient(135deg,transparent 0 14px,#667f9922 14px 15px)}
+.motion-v6 .works .section-heading:before{border-color:#6d829d24;background:repeating-linear-gradient(135deg,transparent 0 18px,#70849c30 18px 19px)}
+.motion-v6 .works .section-heading h2{color:#273643}.motion-v6 .works .section-heading p,.motion-v6 .works .section-label{color:#566b81}.motion-v6 .works .section-heading h2 .blue{color:#426a9b}
+.motion-v6 .works .filters{border-color:#afbdcc}.motion-v6 .works .filters button{background:transparent;color:#4d6177;border-color:#b8c5d3}.motion-v6 .works .filters button:hover{background:#eef2f6;color:#294d79}.motion-v6 .works .filters button.active{background:#214979;color:#fff;border-color:#214979}.motion-v6 .works .filters button.active span{color:#d6e6fd}.motion-v6 .works .filter-underline{background:#426a9b}
+.motion-v6 .works .work-register{border-color:#b7c4d2}.motion-v6 .works .work-register>span{color:#506b88}.motion-v6 .work-register:before,.motion-v6 .work-register:after{color:#6c819c}
+.motion-v6 .project:hover{box-shadow:0 12px 30px #2039510d;border-color:#678ab5}
+.motion-v6 .project[data-id="planning"] .art{background:#f8f9f8}.motion-v6 .project[data-id="planning"] .art>img{object-fit:contain}
+.motion-v6 #detail[data-project="planning"] .case-cover-image{background:#e9eee6}.motion-v6 #detail[data-project="planning"] .case-cover-image img{object-fit:contain}
+.motion-v6 #detail[data-project="planning"] .media-grid.single{max-width:760px;margin-inline:auto}
+.motion-v6 .about-left-atmosphere .symbol-field{opacity:.9}
+@media(prefers-reduced-motion:reduce){.motion-v6 .symbol-field text,.motion-v6 .symbol-row g{transform:none!important}}
+.motion-v6.motion-static .symbol-field text,.motion-v6.motion-static .symbol-row g{transform:none!important}

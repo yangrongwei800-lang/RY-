@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v19');const v19=document.querySelector('.preview-controls');v19.querySelector('span').textContent='MOTION / 19';v19.setAttribute('aria-label','第十九版能力文案排版测试');v19.querySelector('a').href='motion-preview-v18.html';v19.querySelector('a').textContent='对比 V18 ↗';

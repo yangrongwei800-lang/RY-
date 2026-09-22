@@ -1,0 +1,19 @@
+/* First closure at 1.52 s, diamond opening starts at 1.64 s. */
+.motion-v14 #hero-stage .geometry-active .geo-box{animation-name:hero-linked-diamond;animation-duration:3940ms;animation-iteration-count:1}
+.motion-v14 #hero-stage .geometry-active .geo-point{animation-name:hero-linked-anchor;animation-duration:3940ms;animation-iteration-count:1}
+@keyframes hero-linked-diamond{
+ 0%{width:64px;height:64px;opacity:0;transform:rotate(0deg)}
+ 5.785%{opacity:.75}
+ 18.324%{width:50px;height:50px;opacity:.65;animation-timing-function:cubic-bezier(.45,0,.55,1)}
+ 38.579%,41.623%{width:0;height:0;opacity:0;transform:rotate(0deg)}
+ 41.624%{width:0;height:0;opacity:0;transform:rotate(45deg);animation-timing-function:cubic-bezier(.25,.46,.45,1)}
+ 45.127%{opacity:.7;transform:rotate(45deg)}
+ 56.802%,71.98%,76.65%{width:56px;height:56px;opacity:.75;transform:rotate(45deg)}
+ 97.665%,100%{width:0;height:0;opacity:0;transform:rotate(45deg)}
+}
+@keyframes hero-linked-anchor{
+ 0%,28%{opacity:0;transform:scale(.5)}
+ 38.579%,41.624%{opacity:.75;transform:scale(1)}
+ 49%,80%{opacity:0;transform:scale(.5)}
+ 97.665%,100%{opacity:.75;transform:scale(1)}
+}

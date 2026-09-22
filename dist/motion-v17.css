@@ -1,0 +1,6 @@
+/* Wide project cards: anchor keywords immediately above the index rule. */
+.motion-v17 .project.wide .project-info{gap:18px}
+.motion-v17 .project.wide .project-info>div{display:flex;flex-direction:column;flex:1;min-width:0;width:100%;align-self:stretch}
+.motion-v17 .project.wide .card-keywords{margin-top:auto;padding-top:32px;font-size:clamp(18px,1.3vw,24px);line-height:1.7;letter-spacing:.015em;color:#315b8c;text-wrap:balance}
+.motion-v17 .project.wide .project-number{flex-shrink:0}
+@media(max-width:800px){.motion-v17 .project.wide .card-keywords{padding-top:28px;font-size:17px}.motion-v17 .project.wide .project-info{gap:16px}}

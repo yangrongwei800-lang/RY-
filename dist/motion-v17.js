@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v17');const v17=document.querySelector('.preview-controls');v17.querySelector('span').textContent='MOTION / 17';v17.setAttribute('aria-label','第十七版项目标签排版测试');v17.querySelector('a').href='motion-preview-v16.html';v17.querySelector('a').textContent='对比 V16 ↗';

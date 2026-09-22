@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v16');const v16=document.querySelector('.preview-controls');v16.querySelector('span').textContent='MOTION / 16';v16.setAttribute('aria-label','第十六版系列海报测试');v16.querySelector('a').href='motion-preview-v15.html';v16.querySelector('a').textContent='对比 V15 ↗';

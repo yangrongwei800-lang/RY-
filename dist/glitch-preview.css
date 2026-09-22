@@ -1,0 +1,13 @@
+/* Preview only: an animated geometric texture confined to the left column. */
+.motion-v3 .about-name{isolation:isolate}
+.about-left-atmosphere{inset:0;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 90%,transparent)}
+.about-left-atmosphere canvas{position:absolute;inset:0;width:100%;height:100%;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 84%,transparent)}
+.about-left-atmosphere svg{position:absolute;inset:0}
+.motion-v3 .contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.motion-v3 .outro-mail,.motion-v3 .copy-email{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:15px 20px;min-height:56px;font-size:15px;line-height:1.5}
+.motion-v3 .copy-email{border:1px solid #526d91;background:#0a1829c9;color:#d8e6f8;transition:background .25s,border-color .25s}
+.motion-v3 .copy-email:hover{background:#23476e;border-color:#bad3ff}
+.contact-actions svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.3;flex-shrink:0}
+.motion-v3 .outro-copy .contact-feedback{font-size:12px;line-height:1.7;color:#9fb3cd;letter-spacing:0;margin:13px 0 0;min-height:21px;max-width:440px}
+.motion-v3 .outro-email{margin-top:12px;user-select:text}
+@media(max-width:520px){.motion-v3 .contact-actions{gap:9px}.motion-v3 .outro-mail,.motion-v3 .copy-email{padding:13px 16px;gap:14px;font-size:14px;min-height:50px}.motion-v3 .outro-copy .contact-feedback{font-size:11px;max-width:295px}}

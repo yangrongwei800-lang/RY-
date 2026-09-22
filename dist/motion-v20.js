@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v20');const v20=document.querySelector('.preview-controls');v20.querySelector('span').textContent='MOTION / 20';v20.setAttribute('aria-label','第二十版联系按钮同步测试');v20.querySelector('a').href='motion-preview-v19.html';v20.querySelector('a').textContent='对比 V19 ↗';
