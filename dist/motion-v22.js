@@ -1,0 +1,1 @@
+document.body.classList.add('motion-v22');const v22=document.querySelector('.preview-controls');v22.querySelector('span').textContent='MOTION / 22';v22.setAttribute('aria-label','第二十二版标题动效范围修正');v22.querySelector('a').href='motion-preview-v21.html';v22.querySelector('a').textContent='对比 V21 ↗';

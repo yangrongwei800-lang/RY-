@@ -1,0 +1,14 @@
+.motion-v21 .contact-actions .wechat-contact{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:15px 20px;min-height:56px;font-size:15px;line-height:1.5;border:1px solid #84a7d1;background:#102139d6;color:#ecf3ff;transition:background .3s,border-color .3s}
+.motion-v21 .contact-actions .wechat-contact:is(:hover,:focus-visible){background:#23476e;border-color:#bad3ff}
+.motion-v21 .contact-actions> :focus-visible{outline:2px solid #bed4ff;outline-offset:4px}
+body.wechat-open{overflow:hidden}
+#wechat-dialog{width:min(400px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:22px;border:1px solid #7089aa;background:#0c1828;color:#eaf0fa;overflow:auto;box-sizing:border-box}
+#wechat-dialog::backdrop{background:#030a14b8}
+.wechat-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.wechat-dialog-header h2{font-size:21px;line-height:1.4;margin:0}
+.wechat-close{display:flex;align-items:center;gap:10px;color:#bccce0;font-size:14px;padding:8px}
+.wechat-close span{font-size:24px;line-height:1}
+.wechat-close:focus-visible{outline:2px solid #bed4ff;outline-offset:2px}
+#wechat-dialog .wechat-qr{display:block;width:100%;height:auto;max-height:62dvh;object-fit:contain;background:#fff;user-select:auto;-webkit-user-select:auto;-webkit-touch-callout:default}
+#wechat-help{font-size:13px;line-height:1.8;color:#b2c3da;margin:16px 0 0}
+@media(max-width:520px){.motion-v21 .contact-actions .wechat-contact{padding:13px 16px;gap:14px;font-size:14px;min-height:50px}#wechat-dialog{padding:18px}}

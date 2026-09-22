@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const c=document.querySelector('.preview-controls');c.querySelector('span').textContent='MOTION / 25';c.setAttribute('aria-label','第二十五版山体底纹符号');c.querySelector('a').href='motion-preview-v24.html';c.querySelector('a').textContent='对比 V24 ↗';});

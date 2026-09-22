@@ -1,0 +1,22 @@
+(()=>{
+ document.body.classList.add('motion-v21');
+ const controls=document.querySelector('.preview-controls');
+ controls.querySelector('span').textContent='MOTION / 21';
+ controls.setAttribute('aria-label','第二十一版逐字节奏与微信测试');
+ controls.querySelector('a').href='motion-preview-v20.html';
+ controls.querySelector('a').textContent='对比 V20 ↗';
+ const actions=document.querySelector('.contact-actions');
+ const button=document.createElement('button');
+ button.type='button';button.className='wechat-contact';
+ button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','wechat-dialog');
+ button.innerHTML='<span>加微信</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 15.5a8 8 0 0 1-6.5.1L3.5 17l.9-3.1A6 6 0 0 1 2 9.2C2 5.8 5.4 3 9.6 3c3.4 0 6.3 1.8 7.2 4.3"/><path d="M22 13.8c0-2.9-2.8-5.2-6.2-5.2s-6.2 2.3-6.2 5.2 2.8 5.2 6.2 5.2c.9 0 1.8-.2 2.6-.5l2.9 1-.7-2.5c.9-.9 1.4-2 1.4-3.2Z"/><path d="M6.5 8h.1M11.5 8h.1M13.5 13h.1M18 13h.1" stroke-linecap="round"/></svg>';
+ actions.append(button);
+ const dialog=document.createElement('dialog');dialog.id='wechat-dialog';
+ dialog.setAttribute('aria-labelledby','wechat-title');dialog.setAttribute('aria-describedby','wechat-help');
+ dialog.innerHTML='<div class="wechat-dialog-header"><h2 id="wechat-title">微信联系</h2><button type="button" class="wechat-close" aria-label="关闭微信二维码">关闭 <span aria-hidden="true">×</span></button></div><img class="wechat-qr" src="media/wechat-contact-v21.jpg" alt="微信好友二维码，请使用微信扫一扫添加好友" width="888" height="1131"><p id="wechat-help">使用微信扫一扫；手机端可长按图片保存后识别。</p>';
+ document.body.append(dialog);
+ button.addEventListener('click',()=>{dialog.showModal();document.body.classList.add('wechat-open');if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.body.classList.contains('motion-static'))dialog.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:200,easing:'ease-out'});});
+ dialog.querySelector('.wechat-close').addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});
+ dialog.addEventListener('close',()=>{document.body.classList.remove('wechat-open');button.focus({preventScroll:true});});
+})();
