@@ -1,0 +1,5 @@
+/* Reserve a separate bottom corner for the account cover decoration. */
+#detail[data-project=noodle] .case-cover{padding-bottom:61px}
+.case-brand .case-mark-dot{font:inherit;letter-spacing:inherit;color:var(--coral);margin-left:0}
+html[data-detail-input=pointer] #close-detail:focus{outline:none}
+@media(max-width:520px){#detail[data-project=noodle] .case-cover{padding-bottom:45px}.case-brand .case-mark-dot{display:inline}}
