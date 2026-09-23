@@ -1,0 +1,16 @@
+/* Only the two commercial portrait videos, and only on desktop. */
+@media(min-width:801px){#detail[data-project=commercial] .video-grid:has(video[poster*="fashion-red"]) video{height:clamp(300px,32vw,540px);max-height:none;aspect-ratio:auto;object-fit:contain}}
+#detail[data-project=noodle] .case-cover:after{bottom:18px}
+@media(max-width:520px){#detail[data-project=noodle] .case-cover:after{bottom:10px}}
+.about-left-atmosphere canvas.mobile-about-field{mask-image:none;pointer-events:none}
+.planning-reader{margin-top:48px;border-top:1px solid #becad5;padding-top:28px;color:#203549}
+.planning-reader h3{font-size:26px;margin:0 0 20px}
+.pdf-tabs,.pdf-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.planning-reader button,.planning-reader select,.planning-reader input,.pdf-open{font:inherit;font-size:14px;padding:10px 12px;border:1px solid #becad5;background:#f7f9fa;color:#244569;border-radius:0}
+.pdf-tabs button[aria-selected=true]{background:#183653;color:white}.planning-reader button:disabled{opacity:.45;cursor:default}
+.pdf-tools{margin:16px 0}.pdf-tools input{width:64px}.pdf-open{margin-left:auto;text-decoration:none}
+.pdf-window{background:#dde4e9;overflow:auto;max-height:75dvh;min-height:240px;border:1px solid #becad5;padding:12px;overscroll-behavior:contain}
+.pdf-window canvas{display:block;margin:auto;max-width:none;background:white}.pdf-status{font-size:14px;color:#476381;margin:12px 0;min-height:22px}.pdf-start{margin:18px auto;display:block}
+@media(max-width:520px){.planning-reader h3{font-size:23px}.pdf-tabs{display:grid;grid-template-columns:repeat(3,1fr)}.pdf-tabs button{padding:10px 5px;font-size:13px}.pdf-tools{gap:6px}.pdf-open{margin-left:0}.pdf-window{padding:6px;min-height:180px}.pdf-tools button,.pdf-tools select,.pdf-tools input,.pdf-open{font-size:13px;padding:8px}.pdf-tools input{width:48px}}
+
+.planning-reader [hidden]{display:none!important}
