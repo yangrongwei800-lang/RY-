@@ -1,5 +1,8 @@
-/* Reserve a separate bottom corner for the account cover decoration. */
-#detail[data-project=noodle] .case-cover{padding-bottom:61px}
+/* Account cards, decorative plus, then caption at the bottom. */
+#detail[data-project=noodle] .case-cover{display:grid;padding-bottom:0;grid-template-rows:minmax(0,1fr) auto auto}
+#detail[data-project=noodle] .case-cover:after{position:static;grid-row:2;justify-self:end;display:block;margin:12px 0 0}
+#detail[data-project=noodle] .case-cover>figcaption{grid-row:3;margin-top:0}
 .case-brand .case-mark-dot{font:inherit;letter-spacing:inherit;color:var(--coral);margin-left:0}
 html[data-detail-input=pointer] #close-detail:focus{outline:none}
-@media(max-width:520px){#detail[data-project=noodle] .case-cover{padding-bottom:45px}.case-brand .case-mark-dot{display:inline}}
+@media(max-width:520px){.case-brand .case-mark-dot{display:inline}}
+
