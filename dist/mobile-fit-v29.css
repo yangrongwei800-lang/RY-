@@ -1,0 +1,4 @@
+@media(max-width:800px){
+ #detail[data-project=noodle] .noodle-study-copy{min-width:0}
+ #detail[data-project=noodle] .noodle-study-copy h3{white-space:nowrap;font-size:clamp(17px,5vw,27px)}
+}
