@@ -1,6 +1,6 @@
 /* Case-specific art direction, using the portfolio's own project materials. */
 const caseVisuals = {
-  sunshine: {kind:'story', image:'sunshine.jpg', caption:'公益项目成片 · 团队协作', word:'STORY', statement:'从一座古建，打开一本书。', keywords:['公益内容','叙事构思','分镜脚本'], images:[['storyboard-02.jpg','从画面开始'],['storyboard-12.jpg','把故事写进分镜'],['sunshine-script-1.jpg','让内容形成脉络']]},
+  sunshine: {kind:'story', image:'sunshine-cover-v32.jpg', caption:'公益项目成片 · 团队协作', word:'STORY', statement:'从一座古建，打开一本书。', keywords:['公益内容','叙事构思','分镜脚本'], images:[['storyboard-02.jpg','从画面开始'],['storyboard-12.jpg','把故事写进分镜'],['sunshine-script-1.jpg','让内容形成脉络']]},
   'portrait-interview': {kind:'interview', image:'wudajing-portrait.png', caption:'武大靖 · 项目展示素材', word:'PORTRAIT', statement:'从冠军的冰场，到你的冰场。', keywords:['人物采访','品牌内容','互动创意'], images:[['portrait-plan-03.jpg','主题与内容'],['portrait-plan-04.jpg','采访框架'],['portrait-plan-05.jpg','品牌与互动']]},
   xuwen: {kind:'story', image:'xuwen-harvest.jpg', caption:'徐闻菠萝 · 团队项目影像', word:'CHRONICLE', statement:'以时间为线索，看见产业中的人。', keywords:['主题影像','场景拆解','拍摄筹备'], images:[['xuwen-harvest.jpg','田间采收'],['xuwen-processing.jpg','产业生产'],['xuwen-finance.jpg','产业服务']]},
   commercial: {kind:'film', image:'fashion-red.jpg', caption:'人物棚拍 · 商业影像', word:'IN FRAME', statement:'不同的内容版本，同一个表达目标。', keywords:['人物','产品','镜头语言'], images:[['drink-product.jpg','产品呈现'],['drink-life.jpg','生活场景'],['fashion-suit.jpg','人物表达']]},
