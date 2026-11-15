@@ -1,0 +1,746 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f1f0e9"><meta name="description" content="牌桌实验室：可公开分享的澳门桌规21点、百家乐和概率教学小游戏。仅虚拟筹码。"><title>牌桌实验室 · 澳门21点 × 巴卡拉</title><style>:root{--bg:#f1f0e9;--ink:#20332f;--ink2:#6c7a74;--hair:#d9ded5;--cream:#fbfaf5;--paper:#fffefb;--green:#185b4a;--green-d:#0d322d;--gold:#d6ad6e;--danger:#b75f50;--success:#197d5f;--radius:18px;--shadow:0 15px 40px rgba(15,37,31,.08)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;color:var(--ink);background:var(--bg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}body{font-size:14px;line-height:1.48;overflow-x:hidden}button,select,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.36;cursor:default;filter:grayscale(.4)}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #66b99e;outline-offset:3px}button,select{-webkit-tap-highlight-color:transparent}b,strong{font-weight:750}.app-shell{max-width:1340px;margin:auto;padding:0 20px 25px}.masthead{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0 11px;min-height:69px}.identity{display:flex;align-items:center;gap:11px}.identity-mark{height:39px;width:39px;border:1px solid #c0a477;background:#103c35;box-shadow:inset 0 0 0 4px #103c35,inset 0 0 0 5px #b9a36e;border-radius:11px;display:grid;place-items:center;color:#f8ebce;font:22px Georgia,serif;flex:none}.identity h1{font-size:18px;line-height:1.1;letter-spacing:-.03em;margin:0}.identity small{font-size:10px;letter-spacing:.12em;color:#828e86;font-weight:750}.header-actions{display:flex;gap:7px;align-items:center}.ghost-btn{border:1px solid #d9e0d9;background:#fffdfa;border-radius:999px;color:#52685f;padding:8px 12px;min-height:35px;font-size:12px;font-weight:750}.ghost-btn[aria-pressed=true]{border-color:#9bc9b6;background:#e4f3ea;color:#155845}.modebar{display:flex;gap:5px;border-bottom:1px solid #d0d9d1;padding:0 0 8px;margin-bottom:11px;overflow-x:auto;scrollbar-width:none}.modebar::-webkit-scrollbar{display:none}.mode{background:transparent;border:1px solid transparent;border-radius:8px;padding:9px 16px;white-space:nowrap;min-height:40px;color:#64786e;font-weight:750}.mode.current{background:#193e35;color:#fff;box-shadow:0 3px 9px rgba(25,62,53,.15)}.view{display:none;animation:appear .22s ease both}.view.current{display:block}.info-strip{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.metrics{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.metric{background:#fffdf8;border:1px solid #dae2d7;border-radius:11px;padding:7px 13px;min-width:98px}.metric span{font-size:10px;color:#758a7e;display:block;font-weight:750}.metric strong{font-size:18px;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1.3}.table-profile{font-size:11px;color:#618074;border:1px solid #cfddd3;border-radius:50px;padding:7px 11px;background:#eaf2e9;text-align:right}.table-profile b{color:#226a53}.play-layout{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:14px;align-items:start}.play-left{min-width:0;display:flex;flex-direction:column;gap:10px}.casino-table{position:relative;isolation:isolate;min-height:418px;background:radial-gradient(ellipse 54% 44% at 48% 28%,#33735c 0%,#18513f 62%,#0b332a 100%);border-radius:23px 23px 39% 39% / 23px 23px 54px 54px;border:8px solid #3a2f25;box-shadow:0 12px 28px rgba(13,30,26,.15),inset 0 0 0 2px #bc9c67,inset 0 0 0 4px #0e3c30;overflow:hidden;transition:filter .35s}.casino-table:before{content:"";position:absolute;inset:11px 14px 19px;border:1px solid #c3b08d55;border-radius:16px 16px 40% 40%/16px 16px 58px 58px;pointer-events:none}.casino-table:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(36deg,transparent 0,transparent 7px,#ffffff02 8px,transparent 9px);opacity:.35;pointer-events:none}.felt-title{position:absolute;top:12px;left:18px;color:#d3c6a6b3;font-size:10px;font-weight:800;letter-spacing:.14em;z-index:1}.felt-watermark{position:absolute;top:37%;left:0;right:0;text-align:center;color:#d1c6aa20;font:700 clamp(23px,4.7vw,60px) Georgia,serif;letter-spacing:.25em;pointer-events:none;white-space:nowrap}.dealer-zone{position:absolute;top:30px;left:50%;transform:translateX(-50%);display:grid;justify-items:center;gap:3px;z-index:2;min-width:230px}.seat-heading{color:#f0e6c5;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hand-stack{display:flex;align-items:flex-start;justify-content:center;gap:0;min-height:64px;padding-left:8px}.playing-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;width:45px;height:64px;border-radius:6px;background:linear-gradient(145deg,#fffdf8,#f5f2e7);border:1px solid #eee5d5;box-shadow:0 3px 6px #071c186b;color:#26332f;margin-left:-7px;transform:rotate(var(--tilt,0deg));z-index:var(--layer,1)}.playing-card.red{color:#b44e45}.playing-card .rank{font-family:Georgia,serif;font-size:22px;font-weight:bold;line-height:1.1}.playing-card .suit{font-size:18px;line-height:1}.playing-card .corner{position:absolute;top:3px;left:5px;font-size:9px;font-family:Georgia,serif}.playing-card.back{border:3px solid #fff6e5;background:repeating-linear-gradient(45deg,#174b45 0 4px,#226d5b 4px 8px);box-shadow:inset 0 0 0 2px #c3ae79,0 3px 6px #071c186b}.playing-card.back:after{content:"✥";font:22px Georgia,serif;color:#e1c995}.playing-card.dealt{animation:cardArrive .4s cubic-bezier(.21,.8,.25,1.02) both}.point-pill{font-size:11px;padding:2px 9px;border-radius:40px;color:#f4e5c6;background:#082a26aa;border:1px solid #ecdbb244}.guest-row{position:absolute;left:50%;top:148px;transform:translateX(-50%);width:91%;display:flex;justify-content:space-evenly;align-items:flex-start;gap:8px;z-index:2}.guest-seat{text-align:center;width:25%;max-width:172px;min-width:0;transition:transform .25s}.guest-seat.active-turn{transform:translateY(-4px)}.guest-top{display:flex;gap:5px;justify-content:center;align-items:center;color:#fff6e0;font-weight:700;font-size:11px;white-space:nowrap}.avatar{width:20px;height:20px;display:grid;place-items:center;border-radius:50%;font-size:9px;font-weight:850;color:#152f28;flex:none}.guest-top span{text-overflow:ellipsis;overflow:hidden}.guest-seat .hand-stack{min-height:52px;margin-top:5px}.guest-seat .playing-card{width:33px;height:48px;margin-left:-8px;border-radius:4px}.guest-seat .playing-card .rank{font-size:16px}.guest-seat .playing-card .suit{font-size:11px}.guest-seat .playing-card .corner{font-size:7px}.guest-bet{display:inline-flex;gap:4px;align-items:center;font-size:10px;white-space:nowrap;color:#eedab4;border:1px solid #e9d49a2f;padding:1px 7px;background:#123b31bb;border-radius:50px}.guest-note{font-size:10px;color:#e9e0c7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:135px;margin:2px auto}.guest-seat.active-turn .guest-top{color:#ffdfa0}.guest-seat.active-turn .guest-top:before{content:"●";color:#eac37d;font-size:8px}.you-zone{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);z-index:3;text-align:center;min-width:240px;max-width:95%}.you-title{font-size:11px;letter-spacing:.17em;font-weight:900;color:#f6dcab;margin-bottom:4px}.you-zone .hand-stack{min-height:76px}.you-zone .playing-card{width:54px;height:77px;margin-left:-5px}.you-zone .playing-card .rank{font-size:25px}.you-zone .playing-card .suit{font-size:20px}.split-view{display:flex;gap:8px;justify-content:center;max-width:510px;overflow-x:auto;padding:0 2px 3px}.split-hand{padding:5px 6px;border:1px solid transparent;border-radius:9px;flex:none}.split-hand.active-turn{border-color:#e9ce9a;background:#ffffff18}.split-hand .hand-stack{min-height:65px}.split-hand .playing-card{width:39px;height:59px;margin-left:-8px}.split-hand .playing-card .rank{font-size:18px}.split-hand .playing-card .suit{font-size:13px}.split-name{font-size:10px;color:#d7e8df;margin-bottom:1px}.you-summary{display:flex;justify-content:center;gap:6px;align-items:center;color:#e9d5aa;font-size:11px;margin-top:3px}.playing-card.facedown{background:#225b4d}.casino-table.jolt{animation:shakeTable .37s ease-out}.casino-table.reward{animation:glowTable .7s ease-out}.stage-flash{position:absolute;z-index:6;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0}.stage-flash.visible{animation:flashIn 1s ease-out both}.stage-flash strong{font-size:clamp(37px,6vw,77px);font-weight:950;letter-spacing:-.08em;text-shadow:0 2px 24px #061c16af;color:#fce7ac;transform:rotate(-5deg);white-space:nowrap}.stage-flash.loss strong{color:#f2c5b7}.stage-flash .spark{position:absolute;top:35%;left:50%;width:7px;height:7px;background:#ecc67b;border-radius:2px;box-shadow:80px 36px #f7df9b,-70px 21px #ffdd8c,110px -8px #f0ca77,-100px -21px #f3deb6,22px 75px #f4ca82;animation:scatter .7s both}.turn-caption{font-size:12px;color:#d7d7c5;min-height:22px;background:#0b3e32;margin:-7px 7% 0;padding:7px 14px;text-align:center;border-radius:0 0 13px 13px;z-index:2;font-weight:650}.control-surface{background:var(--paper);border:1px solid var(--hair);border-radius:18px;padding:16px;box-shadow:var(--shadow);min-width:0}.panel-title{display:flex;justify-content:space-between;align-items:baseline;gap:5px;margin:0 0 10px}.panel-title h2{font-size:16px;margin:0;letter-spacing:-.03em}.muted{font-size:12px;color:var(--ink2)}.guest-controls{display:flex;align-items:center;justify-content:space-between;gap:5px;background:#f5f7f2;border:1px solid #e3eae1;border-radius:10px;padding:7px 9px;margin-bottom:12px}.counter{display:flex;align-items:center;gap:10px}.counter button{height:31px;width:31px;min-height:31px;border:1px solid #cfdbd2;border-radius:8px;background:#fff;color:#1f634f;font-weight:850}.counter b{min-width:13px;text-align:center;font-size:18px}.stake-display{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}.stake-display strong{font-size:23px;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.chip-tray{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 8px;margin:7px 0 10px}.chip-button{background:none;border:0;display:grid;justify-items:center;align-content:center;padding:0;min-height:62px;gap:2px}.chip-disc{--c:#9e9a8e;--t:#f1f0e6;width:49px;height:49px;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--t) 0deg 12deg,var(--c) 12deg 44deg);display:grid;place-items:center;box-shadow:0 3px 0 #0003,0 5px 7px #0013,0 0 0 1px #0002;position:relative;transition:transform .14s}.chip-disc:before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--c);border:1px solid #fff8;box-shadow:inset 0 0 0 3px #0002,inset 0 0 0 5px #fff3}.chip-disc:after{content:"";position:absolute;inset:10px;border:1px dashed #fff9;border-radius:50%}.chip-disc span{position:relative;z-index:2;color:#fffdf6;font-weight:950;font-size:12px;text-shadow:0 1px 1px #0009;font-variant-numeric:tabular-nums}.chip-button:hover .chip-disc,.chip-button:focus-visible .chip-disc{transform:translateY(-4px)}.chip-button small{font-size:10px;color:#5f7368;font-weight:800}.chip-stack{display:flex;align-items:center;min-height:37px;gap:2px;flex-wrap:wrap;max-height:70px;overflow:hidden}.chip-mini{--c:#8f957f;display:inline-grid;place-items:center;background:var(--c);color:#fff;border:2px dashed #ffffff80;border-radius:50%;width:26px;height:26px;line-height:1;font-size:9px;font-weight:850;margin-right:-8px;box-shadow:0 2px 3px #0003}.tiny-actions{display:flex;gap:7px;flex-wrap:wrap}.tiny-btn{background:#f3f6f0;border:1px solid #d9e1d7;color:#47685b;border-radius:9px;padding:7px 11px;min-height:34px;font-weight:750;font-size:12px}.action-area{margin-top:12px;padding-top:11px;border-top:1px solid #e2e9e1}.primary{width:100%;border:0;border-radius:11px;background:#176c51;color:#fff;min-height:45px;font-weight:850;letter-spacing:.01em;box-shadow:0 4px 0 #0d513b;transition:transform .14s,box-shadow .14s}.primary:not(:disabled):active{transform:translateY(3px);box-shadow:0 1px 0 #0d513b}.primary.secondary{background:#325447;box-shadow:0 4px 0 #193f30}.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.action-btn{border:1px solid #bcd1c3;background:#eaf4eb;color:#205947;font-weight:850;border-radius:10px;min-height:48px;line-height:1.15}.action-btn small{font-size:10px;font-weight:600;opacity:.65;display:block;margin-top:2px}.action-btn.emphasis{background:#1a7155;color:#fff;border-color:#1a7155}.hint-btn{width:100%;margin-top:7px;border:1px solid #d0ddd3;background:#fffefa;color:#537263;padding:8px;min-height:37px;border-radius:9px;font-weight:700}.guide-panel{background:#edf4ec;border-left:3px solid #498b70;border-radius:0 10px 10px 0;padding:11px 12px;margin-top:12px;font-size:12px;color:#395e4e;min-height:72px}.guide-panel b{color:#27543f;display:block;margin-bottom:3px;font-size:12px}.guide-panel.warn{border-left-color:#d39f6d;background:#fbf0e3;color:#845c32}.side-footer{font-size:10px;color:#839389;margin-top:10px}.mini-timeline{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.mini-timeline span{font-size:10px;color:#5e7868;border:1px solid #d9e6db;border-radius:40px;padding:3px 7px;background:#fff}.status-card{background:#fffdf8;border:1px solid var(--hair);border-radius:13px;padding:10px 13px}.status-card .trend{display:flex;gap:3px;margin-top:7px;height:23px;align-items:end}.trend i{width:10px;min-height:3px;background:#71af95;border-radius:3px 3px 0 0}.trend i.down{background:#bd7966}.layout-narrow{max-width:950px;margin:0 auto}.view-heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:14px}.view-heading h2{font-size:22px;margin:0;letter-spacing:-.04em}.view-heading p{font-size:13px;color:var(--ink2);margin:4px 0 0}.section-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(265px,.65fr);gap:14px}.plain-card{background:#fffefb;border:1px solid #dce4dc;border-radius:17px;padding:19px;box-shadow:var(--shadow);min-width:0}.plain-card h3{margin:0 0 9px;font-size:16px}.plain-card p{margin:8px 0;color:#587365}.baccarat-felt{min-height:302px;border-radius:16px;background:radial-gradient(circle at 50% 0,#26775a,#134735 70%);color:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:12px;padding:24px 15px;text-align:center;position:relative}.baccarat-felt .hand-stack{margin:18px 0 6px}.baccarat-felt .playing-card{width:58px;height:82px}.baccarat-felt .playing-card .rank{font-size:29px}.ba-side{min-width:0}.ba-label{font-weight:800;letter-spacing:.16em;font-size:12px;color:#e8d8ab}.ba-score{margin:auto;background:#042c23a1;padding:3px 12px;border-radius:99px;width:fit-content;font-size:13px}.ba-side+.ba-side{border-left:1px solid #ffffff30}.ba-bet-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ba-bet-options button{background:#f5f7f0;border:1px solid #dce7db;padding:10px 5px;border-radius:10px;font-weight:800;color:#39604f}.ba-bet-options button.chosen{border-color:#1b835f;background:#e5f5ea}.amount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.amount-grid button{background:#fff;border:1px solid #d2e0d6;border-radius:8px;padding:8px 2px;color:#345e4c}.amount-grid button.chosen{background:#176c51;color:#fff}.mini-swap{display:flex;gap:6px}.mini-swap button{flex:1;font-size:11px;padding:9px 7px;background:#f8f9f4;border:1px solid #dae6db;border-radius:9px;color:#4c705c}.mini-swap button.chosen{background:#dfefe3;border-color:#6b9d81}.q-progress{height:5px;border-radius:20px;background:#d9e8de;overflow:hidden}.q-progress i{height:100%;background:#2a8d66;display:block;width:0;transition:width .3s}.quiz-title{font-size:25px;letter-spacing:-.04em;line-height:1.35;margin:18px 0 22px}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quiz-options button{border:1px solid #d5e2d7;border-radius:10px;background:#fafbf8;color:#28493a;padding:12px;text-align:left;min-height:58px;font-weight:650}.quiz-options button.correct{background:#e2f3e7;border-color:#51a878}.quiz-options button.wrong{background:#fceae5;border-color:#c38e7e}.lab-fields{display:flex;gap:10px;margin:13px 0}.lab-fields label{flex:1;font-size:12px;color:#6a7c70}.lab-fields select{width:100%;display:block;margin-top:5px;background:#fff;border:1px solid #cfdbd0;border-radius:9px;padding:10px;color:#375e49}.lab-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:11px 0}.lab-stats>div{background:#f0f6ef;border-radius:12px;padding:13px}.lab-stats strong{font-size:22px;display:block}.lab-stats small{font-size:11px;color:#6d8675}.histogram{height:144px;display:flex;gap:3px;align-items:flex-end;border-bottom:1px solid #ccdace;padding:5px}.histogram i{flex:1;min-height:2px;background:#7db69b;border-radius:2px 2px 0 0}.histogram i.neg{background:#cba48a}.terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.term{background:#fffefb;border:1px solid #dae4da;border-radius:12px;padding:14px}.term b{display:block;font-size:14px;margin:1px 0 5px}.term small{color:#438566;font-size:11px;font-weight:800}.term p{font-size:12px;line-height:1.55;margin:0;color:#718074}.search-field{width:100%;max-width:290px;border:1px solid #ccdace;background:#fff;padding:10px 12px;border-radius:10px}.global-note{font-size:11px;color:#7b8981;margin:12px 0;line-height:1.6}.global-note a{color:#2e8065;text-decoration:underline}.modal-overlay{position:fixed;inset:0;background:#081e18b8;z-index:60;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}.modal-overlay.open{display:flex}.modal-card{width:min(590px,100%);max-height:88vh;overflow:auto;background:#fffcf3;border:1px solid #d5ddcd;box-shadow:0 25px 70px #0006;border-radius:20px;padding:23px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-head h2{margin:0;font-size:21px}.modal-body{font-size:13px;line-height:1.75;color:#435d51}.modal-body ul{margin:10px 0;padding-left:21px}.modal-body li{margin:5px 0}.modal-close{background:#e8eee5;border:0;border-radius:9px;color:#476655;font-weight:900;width:34px;height:34px}.toggle-row{display:flex;align-items:center;justify-content:space-between;background:#f3f5ec;border-radius:11px;padding:10px 13px;margin:8px 0}.toggle-row input{accent-color:#1b8163;width:19px;height:19px}.foot{font-size:10px;color:#87968a;text-align:center;padding:5px 0 9px}.chip-fly{position:fixed;z-index:75;pointer-events:none;width:35px;height:35px;border-radius:50%;border:3px dashed #fff7;background:var(--fly,#176c51);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:800;box-shadow:0 3px 10px #0003;transition:transform .37s cubic-bezier(.24,.68,.24,1),opacity .37s}.sr-only{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap}.hidden{display:none!important}
+@keyframes cardArrive{0%{opacity:0;transform:translate(22px,-50px) rotate(-16deg) scale(.88)}70%{opacity:1}100%{opacity:1;transform:translate(0,0) rotate(var(--tilt,0)) scale(1)}}@keyframes shakeTable{0%,100%{transform:translateX(0)}20%{transform:translateX(-3px)}40%{transform:translateX(2px)}60%{transform:translateX(-1px)}80%{transform:translateX(1px)}}@keyframes glowTable{0%{filter:brightness(1)}30%{filter:brightness(1.16)}100%{filter:brightness(1)}}@keyframes flashIn{0%{opacity:0;transform:scale(.72)}16%{opacity:1;transform:scale(1.03)}45%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.03)}}@keyframes scatter{0%{opacity:0;transform:scale(.6)}40%{opacity:1}100%{opacity:0;transform:translateY(-45px) scale(1.5)}}@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1090px){.play-layout{grid-template-columns:minmax(0,1fr) 290px}.casino-table{min-height:403px}.chip-disc{width:44px;height:44px}}
+@media(max-width:820px){.app-shell{padding:0 12px 18px}.play-layout,.section-grid{grid-template-columns:1fr}.control-surface{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px 17px}.control-surface .panel-title{grid-column:1/-1;margin:0}.control-surface .guest-controls{grid-column:1/-1;margin:0}.control-surface .action-area{grid-column:2;grid-row:3/span 3;border:0;padding:0;margin:0}.control-surface .chip-tray{margin:0}.control-surface .stake-display{margin:0}.control-surface .tiny-actions{grid-column:1}.control-surface .guide-panel,.control-surface .side-footer{grid-column:1/-1;margin:0}.casino-table{min-height:350px}.guest-row{top:138px}.dealer-zone{top:22px}.you-zone{bottom:12px}.term-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.app-shell{padding:0 9px 18px}.masthead{min-height:57px;padding:9px 2px}.identity-mark{width:32px;height:32px;border-radius:8px;font-size:19px}.identity{gap:8px}.identity h1{font-size:15px}.identity small{font-size:9px}.header-actions{gap:4px}.ghost-btn{min-height:33px;padding:6px 9px;font-size:11px}.ghost-btn span.optional{display:none}.modebar{gap:2px;margin-bottom:7px;padding-bottom:6px}.mode{padding:7px 11px;min-height:35px;font-size:12px}.info-strip{margin-bottom:7px;gap:4px}.metrics{gap:5px}.metric{min-width:72px;padding:5px 8px;border-radius:8px}.metric strong{font-size:15px}.metric span{font-size:9px}.table-profile{font-size:9px;line-height:1.3;max-width:115px;padding:6px}.casino-table{min-height:352px;border-width:6px;border-radius:18px 18px 37% 37% / 18px 18px 41px 41px}.casino-table:before{inset:8px 8px 12px}.felt-title{top:9px;left:12px;font-size:8px}.dealer-zone{top:27px}.dealer-zone .playing-card{height:54px;width:39px}.dealer-zone .playing-card .rank{font-size:19px}.dealer-zone .playing-card .suit{font-size:15px}.hand-stack{min-height:54px}.guest-row{top:124px;gap:2px;width:98%}.guest-seat{max-width:none;min-width:0}.guest-top{font-size:9px;gap:3px}.avatar{height:16px;width:16px;font-size:8px}.guest-seat .playing-card{height:40px;width:29px;margin-left:-8px}.guest-seat .playing-card .rank{font-size:14px}.guest-seat .playing-card .suit{font-size:9px}.guest-seat .point-pill{font-size:9px}.guest-note{font-size:9px;max-width:80px}.guest-bet{font-size:9px;padding:1px 4px}.you-zone{bottom:12px;min-width:0;width:98%}.you-zone .playing-card{width:43px;height:61px}.you-zone .playing-card .rank{font-size:20px}.you-zone .playing-card .suit{font-size:15px}.you-title{font-size:10px}.you-zone .hand-stack{min-height:63px}.split-view{gap:2px}.split-hand{padding:3px}.split-hand .playing-card{width:29px;height:45px;margin-left:-10px}.split-hand .playing-card .rank{font-size:14px}.split-hand .playing-card .suit{font-size:10px}.turn-caption{font-size:11px;margin:-5px 6% 0;padding:5px 8px}.control-surface{padding:12px;display:block}.control-surface .panel-title{margin-bottom:7px}.control-surface .guest-controls{padding:5px 8px;margin-bottom:7px}.stake-display{margin-bottom:4px!important}.chip-tray{grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;margin:5px 0!important}.chip-button{min-height:47px}.chip-disc{height:34px;width:34px}.chip-disc:before{inset:4px}.chip-disc:after{inset:7px}.chip-disc span{font-size:9px}.chip-button small{display:none}.tiny-actions{margin-top:4px}.action-area{margin-top:8px!important;padding-top:8px!important;border-top:1px solid #e2e9e1!important}.action-grid{grid-template-columns:repeat(3,1fr);gap:5px}.action-btn{min-height:41px;font-size:12px}.action-btn small{font-size:9px}.guide-panel{margin-top:9px!important;min-height:52px;padding:8px 10px}.chip-stack{min-height:24px}.chip-mini{height:20px;width:20px;font-size:8px}.side-footer{margin-top:7px!important}.view-heading h2{font-size:18px}.view-heading p{font-size:12px}.plain-card{padding:12px}.quiz-title{font-size:20px}.quiz-options{grid-template-columns:1fr}.terms-grid{grid-template-columns:repeat(2,1fr);gap:7px}.term{padding:10px}.global-note{font-size:10px}.baccarat-felt{min-height:250px}.baccarat-felt .playing-card{width:48px;height:70px}.lab-fields{flex-wrap:wrap}.lab-fields label{min-width:140px}}
+@media(max-width:385px){.chip-disc{width:30px;height:30px}.chip-tray{gap:1px}.metric{min-width:65px;padding:4px 6px}.guest-seat .guest-bet{font-size:8px}.guest-top span{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}.motion-off *, .motion-off *:before,.motion-off *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+/* Keep the human controls ahead of passive history on small screens. */
+@media(max-width:820px){.play-layout{display:flex;flex-direction:column;gap:9px}.play-left{display:contents}.play-left>div:first-child{order:1;width:100%}.control-surface{order:2;width:100%}.play-left>.status-card{order:3;width:100%}}
+@media(max-width:620px){.casino-table{min-height:377px}.guest-row{top:117px}.guest-note{line-height:1.15}.guest-seat .hand-stack{margin-top:3px;min-height:42px}.you-zone{bottom:10px}}
+
+.quick-dock{display:none}
+@media(max-width:620px){.quick-dock:not(.hidden){position:fixed;left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));z-index:55;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:7px;border:1px solid #c7d5c5;border-radius:15px;background:#fafbf2eF;box-shadow:0 11px 30px #102b2259;backdrop-filter:blur(15px)}.quick-dock button{border:1px solid #bdd1c1;background:#eff6eb;color:#225b42;font-weight:850;font-size:12px;padding:8px 1px;min-height:40px;border-radius:8px}.quick-dock button:first-child{background:#1a7050;color:#fff;border-color:#1a7050}.quick-dock [data-quick-insurance]{grid-column:span 1}.quick-dock:has([data-quick-insurance]){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:385px){.identity small{display:none}.ghost-btn{white-space:nowrap;padding:6px 7px}.header-actions{gap:3px}.split-name{font-size:9px;white-space:nowrap}.you-zone .split-hand .hand-stack{padding-left:5px}}
+
+/* V3.1: budget-first onboarding and legible denomination piles. */
+.setup-card{max-width:420px;background:#f5f0e2;border:1px solid #bfcbb8;box-shadow:0 24px 75px #0007}
+.setup-description{font-size:13px;color:#506b5b;line-height:1.65;margin:13px 0 18px}
+.setup-presets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:19px}
+.setup-presets button{min-height:42px;border:1px solid #b1c2b5;border-radius:9px;background:#fdf9ee;color:#2b5744;font-weight:800;font-size:13px}
+.setup-presets button:active{transform:translateY(1px);background:#e4eddf}
+.setup-label{display:flex;align-items:center;justify-content:space-between;font-weight:750;color:#395c4b;font-size:13px;margin-bottom:7px}
+.setup-label small{font-size:11px;color:#799083;font-weight:600}
+#startBalanceInput{width:100%;min-height:50px;background:#fffdf8;border:1px solid #b9c8b8;border-radius:10px;padding:9px 14px;font-size:24px;font-weight:780;color:#1d523d;font-variant-numeric:tabular-nums}
+.setup-error{min-height:23px;padding-top:5px;color:#b05042;font-size:12px}
+.setup-secondary{width:100%;min-height:42px;margin-top:10px}
+.setup-footnote{font-size:11px;color:#7e8c7d;line-height:1.55;margin:16px 0 0}
+.chip-stack{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px;padding:5px 0;min-height:49px;max-height:none;overflow:visible}
+.chip-pile{display:grid;position:relative;width:49px;height:43px;place-items:center;flex:0 0 49px}
+.chip-pile .chip-mini{position:absolute;width:29px;height:29px;margin:0;border:2px dashed #ffffffa8;box-shadow:0 2px 3px #0003;font-size:9px}
+.chip-pile .pile-bottom{top:8px;left:2px;opacity:.8}
+.chip-pile .pile-top{top:1px;left:6px}
+.chip-pile b{position:absolute;bottom:0;right:-1px;font-size:10px;min-width:19px;background:#f5e5b7;color:#2f4b36;border:1px solid #b4a57e;border-radius:99px;padding:1px 3px;line-height:1.1;text-align:center}
+@media(max-width:385px){.setup-card{padding:16px}.setup-presets{gap:4px}.setup-presets button{font-size:12px}.chip-pile{width:43px;flex-basis:43px}}
+
+/* V3.2 / SINGLE-SCREEN MOBILE PLAY: responsive vertical viewport composition. */
+#mobileModePicker{display:none}
+@media (max-width:900px) and (orientation:portrait){
+  #mobileModePicker{display:block;position:absolute;right:105px;top:6px;z-index:7;max-width:92px;height:33px;padding:4px 8px;background:#e7eee5;border:1px solid #c9d4c6;border-radius:8px;font-size:12px;font-weight:800;color:#26463a}
+  .masthead{position:relative;min-height:39px;padding:3px 0 4px;gap:2px}
+  .identity-mark{width:29px;height:29px;border-radius:7px;font-size:16px}
+  .identity small{display:none}
+  .identity h1{font-size:14px;white-space:nowrap}
+  .header-actions{gap:3px}
+  .header-actions .ghost-btn{height:32px;min-height:32px;width:31px;padding:0;border-radius:8px;font-size:14px;display:grid;place-items:center}
+  #ruleOpen{display:grid;place-items:center;font-size:0}
+  #ruleOpen:before{content:'?';font-size:15px}
+  .modebar{display:none}
+  body.single-screen{height:100dvh;max-height:100dvh;overflow:hidden;overscroll-behavior:none}
+  body.single-screen .app-shell{height:100dvh;max-height:100dvh;min-height:0;overflow:hidden;display:flex;flex-direction:column;padding:env(safe-area-inset-top) 7px max(3px,env(safe-area-inset-bottom))}
+  body.single-screen main{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+  body.single-screen #view-blackjack.current{flex:1;display:flex;min-height:0;flex-direction:column;overflow:hidden;animation:none}
+  body.single-screen .info-strip{flex:none;height:32px;min-height:0;margin:0 0 3px;gap:3px}
+  body.single-screen .metrics{flex-wrap:nowrap;gap:4px;height:100%;flex:1;min-width:0}
+  body.single-screen .metric{display:flex;flex-direction:row;gap:5px;align-items:center;min-height:27px;min-width:0;height:29px;padding:3px 9px;border-radius:8px;white-space:nowrap}
+  body.single-screen .metric span{font-size:10px;line-height:1.15;white-space:nowrap}
+  body.single-screen .metric strong{font-size:14px;line-height:1.15;min-width:0}
+  body.single-screen .metric:nth-child(3),body.single-screen .table-profile{display:none}
+  body.single-screen .play-layout{display:flex;flex:1;flex-direction:column;gap:3px;min-height:0;overflow:hidden}
+  body.single-screen .play-left{display:contents}
+  body.single-screen .play-left>div:first-child{order:1;flex:1;display:flex;flex-direction:column;min-height:0;min-width:0}
+  body.single-screen .casino-table{flex:1;min-height:0;height:auto;overflow:hidden;border-width:4px;border-radius:16px 16px 22% 22% / 16px 16px 27px 27px;box-shadow:inset 0 0 0 1px #baa174,0 3px 12px #1a2d2450}
+  body.single-screen .casino-table:before{inset:6px 8px 10px;border-radius:12px 12px 23% 23%/12px 12px 28px 28px}
+  body.single-screen .felt-title{display:none}
+  body.single-screen .dealer-zone{top:5px;gap:1px;min-width:110px}
+  body.single-screen .seat-heading{font-size:10px;letter-spacing:.08em}
+  body.single-screen .dealer-zone .hand-stack{min-height:45px}
+  body.single-screen .dealer-zone .playing-card{height:45px;width:33px;border-radius:4px}
+  body.single-screen .dealer-zone .playing-card .rank{font-size:17px}
+  body.single-screen .dealer-zone .playing-card .suit{font-size:12px}
+  body.single-screen .dealer-zone .point-pill{font-size:9px;padding:1px 6px}
+  body.single-screen .guest-row{top:42%;left:50%;width:99%;gap:1px}
+  body.single-screen .guest-top{font-size:9px;gap:2px}
+  body.single-screen .guest-top span{max-width:70px}
+  body.single-screen .guest-seat .hand-stack{min-height:36px;margin-top:2px;padding-left:6px}
+  body.single-screen .guest-seat .playing-card{width:25px;height:36px;margin-left:-7px}
+  body.single-screen .guest-seat .playing-card .rank{font-size:12px}
+  body.single-screen .guest-seat .playing-card .suit{font-size:9px}
+  body.single-screen .guest-seat .guest-note{display:none}
+  body.single-screen .guest-seat .guest-bet{border:0;background:transparent;font-size:9px;padding:0;max-width:100%;text-overflow:ellipsis;overflow:hidden}
+  body.single-screen .you-zone{bottom:4px;width:98%;max-width:98%}
+  body.single-screen .you-title{font-size:10px;letter-spacing:.1em;margin-bottom:1px}
+  body.single-screen .you-zone .hand-stack{min-height:55px}
+  body.single-screen .you-zone .playing-card{width:43px;height:59px}
+  body.single-screen .you-zone .playing-card .rank{font-size:21px}
+  body.single-screen .you-zone .playing-card .suit{font-size:16px}
+  body.single-screen .you-summary{font-size:10px;margin-top:0}
+  body.single-screen .split-view{gap:1px;max-width:100%;padding:0}
+  body.single-screen .split-hand{padding:1px 3px}
+  body.single-screen .split-hand .hand-stack{min-height:48px}
+  body.single-screen .split-hand .playing-card{width:29px;height:43px;margin-left:-10px}
+  body.single-screen .split-hand .playing-card .rank{font-size:14px}
+  body.single-screen .split-name{font-size:9px;line-height:1.1}
+  body.single-screen .turn-caption{flex:none;min-height:18px;height:18px;line-height:16px;font-size:10px;padding:1px 5px;margin:-1px 8% 0;border-radius:0 0 7px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body.single-screen .play-left>.status-card{display:none}
+  body.single-screen .control-surface{order:2;flex:none;display:grid!important;grid-template-columns:1fr auto;grid-template-areas:'guest stake' 'chips chips' 'pile tiny' 'action action';gap:3px 5px;padding:5px 7px 6px;border-radius:12px;box-shadow:none;overflow:hidden;min-width:0;max-height:48dvh}
+  body.single-screen .control-surface>.panel-title,body.single-screen .control-surface>.guide-panel,body.single-screen .side-footer{display:none!important}
+  body.single-screen .guest-controls{grid-area:guest;min-height:26px;height:27px;margin:0;padding:2px 5px;font-size:10px;border-radius:7px}
+  body.single-screen .guest-controls .muted{display:none}
+  body.single-screen .counter{gap:4px}
+  body.single-screen .counter b{font-size:13px}
+  body.single-screen .counter button{height:24px;width:26px;min-height:24px;border-radius:5px;font-size:16px}
+  body.single-screen .stake-display{grid-area:stake;min-height:26px;display:flex;justify-content:flex-end;align-items:center;gap:4px;margin:0!important;white-space:nowrap}
+  body.single-screen .stake-display>span{font-size:10px}
+  body.single-screen .stake-display>span b{display:none}
+  body.single-screen #betLabel{font-size:18px;line-height:1}
+  body.single-screen .chip-tray{grid-area:chips;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:1px;min-width:0;margin:0!important;padding:0}
+  body.single-screen .chip-button{min-height:37px;min-width:0;padding:0;display:flex;align-items:center;justify-content:center;border-radius:6px}
+  body.single-screen .chip-disc{width:30px;height:30px;min-width:0}
+  body.single-screen .chip-disc:before{inset:3px}
+  body.single-screen .chip-disc:after{inset:6px}
+  body.single-screen .chip-disc span{font-size:9px}
+  body.single-screen .chip-button small{display:none}
+  body.single-screen .chip-stack{grid-area:pile;display:flex;min-height:25px;height:25px;max-height:25px;min-width:0;margin:0;padding:0 0 2px;gap:1px;flex-wrap:nowrap;align-items:center;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;white-space:nowrap}
+  body.single-screen .chip-stack::-webkit-scrollbar{display:none}
+  body.single-screen .chip-stack>.muted{font-size:10px;line-height:1.3}
+  body.single-screen .chip-pile{width:33px;height:25px;flex:0 0 33px}
+  body.single-screen .chip-pile .chip-mini{width:20px;height:20px;font-size:8px}
+  body.single-screen .chip-pile .pile-bottom{top:3px;left:0}
+  body.single-screen .chip-pile .pile-top{top:0;left:3px}
+  body.single-screen .chip-pile b{right:0;bottom:0;font-size:8px;min-width:13px;padding:1px}
+  body.single-screen .tiny-actions{grid-area:tiny;display:flex;align-items:center;justify-content:flex-end;gap:3px;margin:0;white-space:nowrap;min-width:0}
+  body.single-screen .tiny-actions button{min-height:24px;font-size:10px;padding:2px 6px;border-radius:5px}
+  body.single-screen #presetBet{display:none}
+  body.single-screen .action-area{grid-area:action;margin:0!important;border:0!important;padding:0!important;min-width:0}
+  body.single-screen .action-area .primary{min-height:42px;padding:8px 6px;font-size:14px;max-height:44px}
+  body.single-screen .action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+  body.single-screen .action-btn{min-height:38px;max-height:38px;font-size:12px;padding:3px 1px}
+  body.single-screen .action-btn small{font-size:9px}
+  body.single-screen .hint-btn{font-size:10px;min-height:27px;padding:4px;margin:2px 0 0}
+  body.single-screen .quick-dock{display:none!important}
+  body.single-screen .global-note{display:none}
+  body.single-screen #tableLab[data-phase="playing"] .guest-controls,body.single-screen #tableLab[data-phase="playing"] .stake-display,
+  body.single-screen #tableLab[data-phase="playing"] .chip-tray,body.single-screen #tableLab[data-phase="playing"] .chip-stack,body.single-screen #tableLab[data-phase="playing"] .tiny-actions{display:none!important}
+  body.single-screen #tableLab[data-phase="insurance"] .guest-controls,body.single-screen #tableLab[data-phase="insurance"] .stake-display,
+  body.single-screen #tableLab[data-phase="insurance"] .chip-tray,body.single-screen #tableLab[data-phase="insurance"] .chip-stack,body.single-screen #tableLab[data-phase="insurance"] .tiny-actions{display:none!important}
+  body.single-screen #tableLab[data-phase="settled"] .guest-controls,body.single-screen #tableLab[data-phase="settled"] .stake-display,
+  body.single-screen #tableLab[data-phase="settled"] .chip-tray,body.single-screen #tableLab[data-phase="settled"] .chip-stack,body.single-screen #tableLab[data-phase="settled"] .tiny-actions{display:none!important}
+  body.single-screen #tableLab[data-phase="playing"] .control-surface,body.single-screen #tableLab[data-phase="insurance"] .control-surface,
+  body.single-screen #tableLab[data-phase="settled"] .control-surface{padding:4px 7px 7px;gap:0}
+  body.single-screen .action-area #insuranceControls .action-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:620px){
+  body.single-screen .masthead{min-height:35px;height:35px}
+  body.single-screen .info-strip{height:28px}
+  body.single-screen .dealer-zone{top:2px}
+  body.single-screen .dealer-zone .playing-card{height:39px;width:29px}
+  body.single-screen .dealer-zone .hand-stack{min-height:39px}
+  body.single-screen .guest-row{top:31%}
+  body.single-screen .you-zone .playing-card{height:49px;width:36px}
+  body.single-screen .you-zone .hand-stack{min-height:49px}
+  body.single-screen .you-summary{display:none}
+  body.single-screen .chip-button{min-height:32px}
+  body.single-screen .chip-disc{width:26px;height:26px}
+  body.single-screen .chip-stack{height:22px;min-height:22px}
+  body.single-screen .action-area .primary{height:37px;min-height:37px}
+}
+
+
+@media (min-width:621px) and (max-width:900px) and (orientation:portrait){
+ #mobileModePicker{right:147px;max-width:130px;top:10px;height:37px;font-size:14px}
+ body.single-screen .masthead{min-height:53px;padding:7px 4px}
+ body.single-screen .identity-mark{height:36px;width:36px;font-size:20px}
+ body.single-screen .identity h1{font-size:19px}
+ body.single-screen .header-actions .ghost-btn{height:37px;min-height:37px;width:42px;font-size:17px}
+ body.single-screen .info-strip{height:42px;margin-bottom:5px}
+ body.single-screen .metric{height:37px;min-height:37px;padding:5px 13px}
+ body.single-screen .metric strong{font-size:20px}
+ body.single-screen .metric span{font-size:12px}
+ body.single-screen .casino-table{border-width:6px;border-radius:19px 19px 18% 18%/19px 19px 60px 60px}
+ body.single-screen .dealer-zone{top:4%}
+ body.single-screen .dealer-zone .playing-card{width:52px;height:72px}
+ body.single-screen .dealer-zone .playing-card .rank{font-size:27px}
+ body.single-screen .dealer-zone .playing-card .suit{font-size:22px}
+ body.single-screen .dealer-zone .point-pill{font-size:12px;padding:2px 9px}
+ body.single-screen .dealer-zone .seat-heading{font-size:13px}
+ body.single-screen .guest-row{top:43%;width:94%}
+ body.single-screen .guest-top{font-size:13px}
+ body.single-screen .guest-seat .playing-card{height:58px;width:42px}
+ body.single-screen .guest-seat .playing-card .rank{font-size:19px}
+ body.single-screen .guest-seat .playing-card .suit{font-size:15px}
+ body.single-screen .guest-seat .guest-bet{font-size:12px}
+ body.single-screen .you-zone{bottom:4%}
+ body.single-screen .you-zone .playing-card{height:91px;width:65px}
+ body.single-screen .you-zone .playing-card .rank{font-size:31px}
+ body.single-screen .you-zone .playing-card .suit{font-size:25px}
+ body.single-screen .you-title{font-size:13px}
+ body.single-screen .you-summary{font-size:13px}
+ body.single-screen .turn-caption{height:23px;min-height:23px;line-height:19px;font-size:12px}
+ body.single-screen .control-surface{padding:8px 12px;gap:5px 10px;max-height:35dvh}
+ body.single-screen .guest-controls{height:34px;min-height:34px;font-size:13px}
+ body.single-screen .counter button{width:31px;height:30px}
+ body.single-screen .stake-display{height:34px}
+ body.single-screen #betLabel{font-size:21px}
+ body.single-screen .chip-button{min-height:49px}
+ body.single-screen .chip-disc{width:43px;height:43px}
+ body.single-screen .chip-disc span{font-size:12px}
+ body.single-screen .chip-stack{min-height:32px;height:32px}
+ body.single-screen .chip-pile{width:42px;flex-basis:42px;height:32px}
+ body.single-screen .chip-pile .chip-mini{height:26px;width:26px}
+ body.single-screen .tiny-actions button{min-height:29px;font-size:12px}
+ body.single-screen .action-area .primary{min-height:50px;max-height:55px;font-size:17px}
+ body.single-screen .action-btn{min-height:48px;max-height:49px;font-size:15px}
+ body.single-screen .action-btn small{font-size:11px}
+ body.single-screen .hint-btn{min-height:30px;font-size:13px}
+}
+
+
+/* Preserve one-screen geometry through NPC turn, dealer draw, and settlement. */
+@media(max-width:900px) and (orientation:portrait){
+body.single-screen #tableLab:not([data-phase="betting"]) .guest-controls,
+body.single-screen #tableLab:not([data-phase="betting"]) .stake-display,
+body.single-screen #tableLab:not([data-phase="betting"]) .chip-tray,
+body.single-screen #tableLab:not([data-phase="betting"]) .chip-stack,
+body.single-screen #tableLab:not([data-phase="betting"]) .tiny-actions{display:none!important}
+body.single-screen #tableLab:not([data-phase="betting"]) .control-surface{padding:4px 7px 7px;gap:0}
+}
+
+/* V3.3 / COMPACT TABLE + THUMB-REACH LAYOUT */
+.mobile-top-menu,.mobile-toolrow{display:none}
+.mobile-menu.hidden{display:none!important}
+.mobile-menu{position:fixed;inset:0;z-index:1002;display:flex;align-items:flex-end;justify-content:center}
+.mobile-menu-backdrop{position:absolute;inset:0;background:#142821aa;border:0;border-radius:0;cursor:pointer}
+.mobile-menu-sheet{z-index:1;position:relative;width:min(100%,520px);background:#f6f4ec;border:1px solid #c9d3c7;border-radius:22px 22px 0 0;padding:20px 18px max(24px,env(safe-area-inset-bottom));box-shadow:0 -12px 48px #152c2366;max-height:85dvh;overflow:auto;outline:none}
+.mobile-menu-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;gap:8px}
+.mobile-menu-head small{display:block;font-size:10px;letter-spacing:.2em;color:#879487;font-weight:850}
+.mobile-menu-head b{display:block;font-size:20px;line-height:1.2}
+.mobile-menu-close{width:42px;height:42px;border:1px solid #cdd9ce;border-radius:12px;background:#fff;color:#24493a;font-size:24px}
+.mobile-menu-modes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mobile-menu-modes button{min-height:48px;text-align:left;background:#fff;border:1px solid #d5ded5;color:#23483e;border-radius:12px;padding:10px 13px;font-weight:850}
+.mobile-menu-modes button.selected{background:#164c3d;color:#fff;border-color:#164c3d}
+.mobile-menu-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}
+.mobile-menu-tools button{min-height:44px;background:#e9eee7;border:1px solid #cedccf;border-radius:10px;color:#235040;font-weight:750;font-size:12px}
+.mobile-menu-sheet p{font-size:12px;line-height:1.5;color:#63746b;margin:16px 0 0}
+@media(max-width:900px) and (orientation:portrait){
+  #mobileModePicker{display:none!important}
+  .header-actions{display:none!important}
+  .mobile-top-menu{display:grid;place-items:center;min-width:38px;width:38px;height:38px;border:1px solid #cfdacf;border-radius:11px;background:#f9f9f3;color:#214e40;font-size:20px;flex:none}
+  body.single-screen .app-shell{padding-left:9px;padding-right:9px;padding-bottom:max(5px,env(safe-area-inset-bottom))}
+  body.single-screen .masthead{height:44px;min-height:44px;max-height:44px;padding:3px 0 4px;flex:none}
+  body.single-screen .identity-mark{width:30px;height:30px;font-size:19px}
+  body.single-screen .identity h1{font-size:15px}
+  body.single-screen .info-strip{height:34px;min-height:34px;margin-bottom:5px}
+  body.single-screen .metric{height:32px;min-height:32px;border-radius:10px;gap:7px;padding:4px 10px;background:#fffdf8}
+  body.single-screen .metric span{font-size:10px}
+  body.single-screen .metric strong{font-size:17px}
+  body.single-screen .play-layout{gap:6px;justify-content:space-between}
+  body.single-screen .play-left>div:first-child{flex:0 0 clamp(184px,35dvh,274px);min-height:0;max-height:39dvh}
+  body.single-screen .casino-table{height:100%;min-height:0;flex:1;border-width:4px;border-radius:17px 17px 16% 16% / 17px 17px 24px 24px}
+  body.single-screen .dealer-zone{top:8px;gap:1px}
+  body.single-screen .dealer-zone .playing-card{width:34px;height:44px}
+  body.single-screen .dealer-zone .hand-stack{min-height:44px}
+  body.single-screen .dealer-zone .point-pill{font-size:9px}
+  body.single-screen .guest-row{top:34%;width:96%;gap:2px}
+  body.single-screen .guest-seat .playing-card{width:27px;height:37px}
+  body.single-screen .guest-seat .playing-card .rank{font-size:13px}
+  body.single-screen .guest-seat .playing-card .suit{font-size:10px}
+  body.single-screen .guest-seat .guest-bet{font-size:9px}
+  body.single-screen .you-zone{bottom:5px;width:97%}
+  body.single-screen .you-title{font-size:10px}
+  body.single-screen .you-zone .hand-stack{min-height:58px}
+  body.single-screen .you-zone .playing-card{width:43px;height:58px}
+  body.single-screen .you-zone .playing-card .rank{font-size:22px}
+  body.single-screen .you-zone .playing-card .suit{font-size:16px}
+  body.single-screen .you-summary{font-size:10px}
+  body.single-screen .felt-watermark{top:37%;font-size:clamp(17px,5vw,33px);opacity:.45}
+  body.single-screen .turn-caption{height:18px;min-height:18px;line-height:17px;font-size:10px;padding:0 6px;margin:-2px 7% 0}
+  body.single-screen .control-surface{order:2;flex:1;max-height:none;min-height:0;display:grid!important;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'stake stake' 'chips chips' 'pile tiny' 'guest tools' 'action action';grid-template-rows:30px minmax(87px,1fr) 28px 36px 51px;gap:6px 7px;padding:10px 11px 11px;border-radius:15px;align-content:stretch;overflow:hidden;box-shadow:0 2px 9px #0c271613}
+  body.single-screen .stake-display{grid-area:stake;min-height:28px;height:30px;margin:0!important;justify-content:space-between;white-space:nowrap}
+  body.single-screen .stake-display>span{font-size:12px}
+  body.single-screen #betLabel{font-size:21px}
+  body.single-screen .chip-tray{grid-area:chips;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,minmax(38px,1fr));gap:5px 4px;margin:0!important;align-content:stretch;overflow:hidden}
+  body.single-screen .chip-button{min-height:38px;width:100%;border-radius:9px;justify-self:center;transition:transform .14s}
+  body.single-screen .chip-disc{width:clamp(31px,9vw,44px);height:clamp(31px,9vw,44px)}
+  body.single-screen .chip-disc:before{inset:4px}
+  body.single-screen .chip-disc:after{inset:7px}
+  body.single-screen .chip-disc span{font-size:clamp(9px,2.7vw,12px)}
+  body.single-screen .chip-button:active:not(:disabled){transform:translateY(2px) scale(.96)}
+  body.single-screen .chip-stack{grid-area:pile;min-height:28px;height:28px;max-height:28px;margin:0;overflow-x:auto}
+  body.single-screen .tiny-actions{grid-area:tiny;gap:4px;justify-content:flex-end;margin:0}
+  body.single-screen .tiny-actions .tiny-btn{font-size:11px;min-height:28px;height:28px;padding:3px 9px}
+  body.single-screen .guest-controls{grid-area:guest;display:flex;min-height:36px;height:36px;gap:7px;background:transparent;border:0;margin:0;padding:0;justify-content:flex-start;font-size:12px}
+  body.single-screen .guest-controls .counter{gap:5px;margin-left:5px}
+  body.single-screen .guest-controls .counter button{height:36px;width:40px;min-height:36px;border-radius:10px;font-size:18px;touch-action:manipulation}
+  body.single-screen .guest-controls .counter b{font-size:15px;min-width:15px}
+  body.single-screen .mobile-toolrow{grid-area:tools;display:flex;align-items:center;justify-content:flex-end;min-height:36px;height:36px}
+  body.single-screen .mobile-phase-label{display:none}
+  body.single-screen .mobile-menu-button{min-height:36px;padding:6px 12px;border-radius:10px;color:#315c4d;background:#f0f3ed;border:1px solid #c8d8cf;font-size:11px;font-weight:800;white-space:nowrap}
+  body.single-screen .action-area{grid-area:action;min-height:51px;margin:0!important;padding:0!important;border:0!important;display:flex;flex-direction:column;justify-content:flex-end}
+  body.single-screen #betControls .primary,body.single-screen #roundEndControls .primary{min-height:51px;height:51px;max-height:none;border-radius:11px;font-size:17px;letter-spacing:.02em}
+  body.single-screen .action-area .primary{min-height:51px}
+  body.single-screen .action-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:40px 53px;gap:6px 5px;max-width:400px;margin-left:auto}
+  body.single-screen .action-btn{min-height:0;max-height:none;font-size:12px;height:100%;padding:5px 2px;border-radius:10px}
+  body.single-screen .action-btn small{font-size:9px}
+  body.single-screen .action-btn[data-action=double]{grid-row:1;grid-column:1/4}
+  body.single-screen .action-btn[data-action=split]{grid-row:1;grid-column:4/7}
+  body.single-screen .action-btn[data-action=surrender]{grid-row:1;grid-column:7/10}
+  body.single-screen .action-btn[data-action=half]{grid-row:1;grid-column:10/13}
+  body.single-screen .action-btn[data-action=hit]{grid-row:2;grid-column:1/7;background:#12684f;color:white;font-size:17px;font-weight:850}
+  body.single-screen .action-btn[data-action=stand]{grid-row:2;grid-column:7/13;background:#eee9d9;color:#183e32;font-size:17px;font-weight:850}
+  body.single-screen .hint-btn{min-height:25px;margin-top:3px;border:0;background:transparent;color:#416859;font-size:11px;text-align:right;padding:3px 6px}
+  body.single-screen .guest-controls .muted{display:none}
+  body.single-screen .quick-dock{display:none!important}
+  body.single-screen .foot,body.single-screen .global-note{display:none!important}
+  body.single-screen #tableLab:not([data-phase=betting]) .control-surface{flex:0 0 auto;min-height:0;max-height:none;padding:7px 10px 10px;display:grid!important;grid-template-areas:'tools tools' 'action action';grid-template-rows:32px auto;gap:4px}
+  body.single-screen #tableLab:not([data-phase=betting]) .mobile-toolrow{justify-content:flex-end;height:32px;min-height:32px}
+  body.single-screen #tableLab:not([data-phase=betting]) .guest-controls{display:none!important}
+  body.single-screen #tableLab:not([data-phase=betting]) .stake-display,
+  body.single-screen #tableLab:not([data-phase=betting]) .chip-tray,
+  body.single-screen #tableLab:not([data-phase=betting]) .chip-stack,
+  body.single-screen #tableLab:not([data-phase=betting]) .tiny-actions{display:none!important}
+  body.single-screen #tableLab:not([data-phase=betting]) .action-area{min-height:0}
+  body.single-screen #tableLab[data-phase=playing] .control-surface,body.single-screen #tableLab[data-phase=insurance] .control-surface{min-height:157px}
+  body.single-screen #tableLab[data-phase=playing] .casino-table,body.single-screen #tableLab[data-phase=insurance] .casino-table{max-height:38dvh}
+  body.single-screen #insuranceControls .action-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:52px}
+  body.single-screen #insuranceControls .action-btn{grid-area:auto!important;font-size:12px}
+  body.single-screen #tableLab[data-phase=dealing] .control-surface,
+  body.single-screen #tableLab[data-phase=dealer] .control-surface{min-height:92px}
+}
+@media(max-width:900px) and (orientation:portrait) and (max-height:700px){
+  body.single-screen .play-left>div:first-child{flex-basis:clamp(170px,33dvh,232px)}
+  body.single-screen .control-surface{gap:4px 5px;grid-template-rows:27px minmax(75px,1fr) 25px 33px 46px;padding:6px 8px 7px}
+  body.single-screen .chip-disc{width:clamp(29px,8.6vw,39px);height:clamp(29px,8.6vw,39px)}
+  body.single-screen .guest-controls,body.single-screen .mobile-toolrow{height:33px;min-height:33px}
+  body.single-screen .guest-controls .counter button{height:33px;min-height:33px;width:37px}
+  body.single-screen .mobile-menu-button{min-height:33px}
+  body.single-screen #betControls .primary{min-height:46px;height:46px}
+  body.single-screen .action-grid{grid-template-rows:36px 50px}
+  body.single-screen #tableLab[data-phase=playing] .control-surface,body.single-screen #tableLab[data-phase=insurance] .control-surface{min-height:144px}
+}
+@media(max-width:900px) and (orientation:portrait) and (max-height:590px){
+  body.single-screen .masthead{height:36px;min-height:36px;max-height:36px}
+  body.single-screen .info-strip{height:29px;min-height:29px;margin-bottom:2px}
+  body.single-screen .metric{height:28px;min-height:28px}
+  body.single-screen .play-left>div:first-child{flex-basis:clamp(151px,30dvh,175px)}
+  body.single-screen .control-surface{gap:2px 4px;grid-template-rows:22px minmax(72px,1fr) 23px 31px 42px;padding:5px 7px 6px}
+  body.single-screen #betControls .primary{min-height:42px;height:42px}
+  body.single-screen .guest-controls,.mobile-toolrow{min-height:31px;height:31px}
+  body.single-screen .guest-controls .counter button{height:31px;min-height:31px}
+  body.single-screen .dealer-zone{top:4px}
+  body.single-screen .dealer-zone .playing-card{height:38px;width:29px}
+  body.single-screen .dealer-zone .hand-stack{min-height:38px}
+  body.single-screen .guest-row{top:32%}
+  body.single-screen .you-zone .playing-card{height:48px;width:37px}
+  body.single-screen .you-zone .hand-stack{min-height:48px}
+  body.single-screen .you-summary{display:none}
+  body.single-screen .action-grid{grid-template-rows:35px 48px}
+  body.single-screen #tableLab[data-phase=playing] .control-surface,body.single-screen #tableLab[data-phase=insurance] .control-surface{min-height:136px}
+}
+@media(min-width:621px) and (max-width:900px) and (orientation:portrait){
+ body.single-screen .play-left>div:first-child{flex-basis:clamp(280px,38dvh,372px)}
+ body.single-screen .control-surface{grid-template-rows:39px minmax(115px,1fr) 42px 50px 64px;padding:15px 17px;gap:10px}
+ body.single-screen .chip-disc{width:57px;height:57px}
+ body.single-screen .guest-controls,.mobile-toolrow{height:50px;min-height:50px}
+ body.single-screen .guest-controls .counter button{height:46px;width:50px}
+ body.single-screen .mobile-menu-button{min-height:46px;font-size:14px}
+ body.single-screen #betControls .primary{height:64px;min-height:64px;font-size:19px}
+ body.single-screen .action-grid{grid-template-rows:54px 70px}
+}
+/* V3.3 / guaranteed table-control vertical allocation */
+@media(max-width:900px) and (orientation:portrait){
+ body.single-screen .play-layout{display:grid!important;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(195px,42%) minmax(220px,1fr);min-height:0;gap:5px;align-content:stretch}
+ body.single-screen .play-left>div:first-child{min-height:0;max-height:none;height:100%;width:100%;flex:none;overflow:hidden}
+ body.single-screen .casino-table{flex:1;min-height:0;height:auto}
+ body.single-screen .guest-row{top:30%}
+ body.single-screen .control-surface{min-height:0;max-height:none;flex:none;height:100%}
+ body.single-screen #tableLab:not([data-phase=betting]) .control-surface{height:auto;align-self:end;min-height:0}
+}
+@media(max-width:900px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen .play-layout{grid-template-rows:minmax(184px,41%) minmax(214px,1fr)}
+ body.single-screen .guest-row{top:28%}
+ body.single-screen .guest-seat .playing-card{width:23px;height:32px}
+ body.single-screen .guest-seat .hand-stack{min-height:33px}
+ body.single-screen .guest-seat .playing-card .rank{font-size:12px}
+ body.single-screen .guest-seat .guest-bet{font-size:8px}
+ body.single-screen .you-title{font-size:9px}
+}
+/* V3.3 / right-thumb 3x3 chip keypad, uses lower-right reach zone */
+@media(max-width:620px) and (orientation:portrait){
+ body.single-screen .control-surface{
+   grid-template-columns:minmax(114px,41%) minmax(0,1fr);
+   grid-template-areas:'stake tools' 'pile chips' 'tiny chips' 'guest chips' 'action action';
+   grid-template-rows:36px repeat(3,minmax(42px,1fr)) 51px;
+   gap:5px 7px;
+   padding:8px 10px 10px;
+ }
+ body.single-screen .stake-display{grid-area:stake;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:36px;min-height:36px;gap:0}
+ body.single-screen .stake-display>span{font-size:10px;line-height:1.1}
+ body.single-screen #betLabel{font-size:18px;line-height:1.2}
+ body.single-screen .mobile-toolrow{grid-area:tools;justify-content:flex-end;min-height:36px;height:36px}
+ body.single-screen .mobile-menu-button{min-height:36px;font-size:11px;padding:5px 11px}
+ body.single-screen .chip-tray{grid-area:chips;height:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(37px,1fr));align-items:stretch;gap:3px 4px;overflow:hidden}
+ body.single-screen .chip-button{min-height:36px;height:100%;touch-action:manipulation}
+ body.single-screen .chip-disc{width:min(41px,10.8vw);height:min(41px,10.8vw)}
+ body.single-screen .chip-disc span{font-size:clamp(9px,2.6vw,12px)}
+ body.single-screen .chip-stack{grid-area:pile;min-height:0;max-height:100%;height:100%;align-items:center;overflow-x:auto}
+ body.single-screen .chip-pile{width:33px;flex-basis:33px}
+ body.single-screen .chip-stack>.muted{font-size:10px;line-height:1.25;white-space:normal}
+ body.single-screen .tiny-actions{grid-area:tiny;justify-content:flex-start;flex-wrap:nowrap;min-width:0;align-self:center;gap:3px}
+ body.single-screen .tiny-actions .tiny-btn{font-size:10px;padding:3px 5px;min-width:0;min-height:34px;height:34px;white-space:nowrap}
+ body.single-screen .guest-controls{grid-area:guest;min-height:38px;height:38px;gap:0;justify-content:flex-start;align-self:end;min-width:0}
+ body.single-screen .guest-controls>div:first-child>b{font-size:0}
+ body.single-screen .guest-controls>div:first-child>b:after{content:'客人';font-size:12px}
+ body.single-screen .guest-controls .counter{gap:2px;margin-left:4px}
+ body.single-screen .guest-controls .counter button{height:36px;width:34px;min-height:36px;border-radius:8px}
+ body.single-screen .guest-controls .counter b{font-size:14px;min-width:12px}
+ body.single-screen .action-area{grid-area:action;min-height:51px}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:700px){
+ body.single-screen .control-surface{grid-template-rows:32px repeat(3,minmax(37px,1fr)) 46px;gap:4px 5px;padding:6px 8px 7px}
+ body.single-screen .stake-display,body.single-screen .mobile-toolrow{height:32px;min-height:32px}
+ body.single-screen .mobile-menu-button{min-height:32px}
+ body.single-screen .guest-controls{height:34px;min-height:34px}
+ body.single-screen .guest-controls .counter button{height:33px;min-height:33px;width:32px}
+ body.single-screen .chip-disc{width:min(39px,10.5vw);height:min(39px,10.5vw)}
+ body.single-screen .tiny-actions .tiny-btn{font-size:9px;min-height:30px;height:30px}
+ body.single-screen #betControls .primary{min-height:46px;height:46px}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen .control-surface{grid-template-rows:27px repeat(3,minmax(35px,1fr)) 43px;gap:3px 4px;padding:5px 7px 6px}
+ body.single-screen .stake-display,body.single-screen .mobile-toolrow{height:27px;min-height:27px}
+ body.single-screen #betLabel{font-size:16px}
+ body.single-screen .mobile-menu-button{min-height:27px;height:27px;font-size:10px;padding:3px 8px}
+ body.single-screen .chip-disc{width:min(33px,10.3vw);height:min(33px,10.3vw)}
+ body.single-screen .guest-controls{height:32px;min-height:32px}
+ body.single-screen .guest-controls .counter button{width:30px;height:31px;min-height:31px}
+ body.single-screen .tiny-actions .tiny-btn{font-size:9px;padding:2px 3px;min-height:28px;height:28px}
+ body.single-screen #betControls .primary{min-height:42px;height:42px}
+}
+/* V3.3 / NPC seats live in a compact row below the felt on small screens. */
+.guest-dock{display:none}
+@media(max-width:900px) and (orientation:portrait){
+ body.single-screen .guest-dock{flex:0 0 34px;min-height:34px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:9px;background:#e5eae0;border:1px solid #d6e0d4;margin:3px 2px 0}
+ body.single-screen .guest-dock .guest-row{position:static;left:auto;top:auto;transform:none;width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:1px;padding:0 3px}
+ body.single-screen .guest-dock .guest-seat{flex:1 1 0;width:0;max-width:none;min-width:0;display:flex;flex-direction:column;align-items:center;gap:0;justify-content:center;transform:none!important;padding:0 2px;border-right:1px solid #d2d9cc}
+ body.single-screen .guest-dock .guest-seat:last-child{border-right:0}
+ body.single-screen .guest-dock .guest-top{font-size:9px;gap:3px;color:#284e40;line-height:1.15;font-weight:800}
+ body.single-screen .guest-dock .guest-top span{max-width:80px}
+ body.single-screen .guest-dock .avatar{width:15px;height:15px;font-size:8px}
+ body.single-screen .guest-dock .hand-stack{display:none}
+ body.single-screen .guest-dock .guest-bet{max-width:100%;font-size:9px;line-height:1.2;background:none;border:0;color:#567362;padding:0;overflow:hidden;text-overflow:ellipsis}
+ body.single-screen .guest-dock .guest-note{display:none}
+ body.single-screen .guest-dock .guest-seat.active-turn{background:#d2e6d5}
+ body.single-screen .guest-dock .guest-seat.active-turn .guest-top{color:#0c7752}
+ body.single-screen .casino-table .guest-row{display:none}
+ body.single-screen .turn-caption{margin:1px 8% 0}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen .guest-dock{flex-basis:30px;min-height:30px;margin-top:1px}
+ body.single-screen .guest-dock .guest-bet{font-size:8px}
+}
+/* Keep both hands legible when the miniature felt is only ~150px tall. */
+@media(max-width:900px) and (orientation:portrait){
+ body.single-screen .dealer-zone .point-pill{position:absolute;left:calc(50% + 24px);top:27px;max-width:82px;white-space:nowrap;padding:1px 4px;line-height:13px;font-size:9px;pointer-events:none}
+ body.single-screen .you-title{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:9px;margin:0;line-height:1.15}
+ body.single-screen .you-summary{display:none!important}
+ body.single-screen .you-zone{bottom:5px}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen .dealer-zone{top:3px}
+ body.single-screen .dealer-zone .point-pill{top:20px}
+ body.single-screen .you-title{top:-10px;font-size:8px}
+ body.single-screen .you-zone{bottom:2px}
+}
+/* More space for the high-frequency actions, while keeping them in the lower thumb zone. */
+@media(max-width:900px) and (orientation:portrait){
+ body.single-screen #tableLab[data-phase=playing] .control-surface,
+ body.single-screen #tableLab[data-phase=insurance] .control-surface{height:clamp(216px,35dvh,304px);min-height:0;grid-template-rows:40px minmax(0,1fr);gap:7px;padding:10px 11px 12px}
+ body.single-screen #tableLab[data-phase=playing] .mobile-toolrow{height:40px;min-height:40px;justify-content:space-between;gap:8px}
+ body.single-screen #tableLab[data-phase=playing] .mobile-phase-label{display:block;min-width:0;font-size:11px;font-weight:750;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#557569}
+ body.single-screen #tableLab[data-phase=playing] .mobile-menu-button{height:38px;min-height:38px}
+ body.single-screen #tableLab[data-phase=playing] .action-area{height:100%;min-height:0;display:flex}
+ body.single-screen #tableLab[data-phase=playing] #playerControls{height:100%;min-height:0;display:flex;flex-direction:column;justify-content:flex-end}
+ body.single-screen #tableLab[data-phase=playing] #playerControls.hidden{display:none!important}
+ body.single-screen #tableLab[data-phase=playing] .action-grid{width:100%;max-width:none;flex:1;min-height:0;grid-template-rows:minmax(47px, 0.86fr) minmax(57px,1.14fr);gap:7px 6px}
+ body.single-screen #tableLab[data-phase=playing] .hint-btn{min-height:27px;flex:none;margin-top:3px;font-size:12px}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=hit],body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=stand]{font-size:19px}
+}
+@media(max-width:900px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen #tableLab[data-phase=playing] .control-surface{height:202px;grid-template-rows:32px minmax(0,1fr);padding:7px 9px 8px;gap:5px}
+ body.single-screen #tableLab[data-phase=playing] .mobile-toolrow{height:32px;min-height:32px}
+ body.single-screen #tableLab[data-phase=playing] .mobile-menu-button{height:32px;min-height:32px}
+ body.single-screen #tableLab[data-phase=playing] .action-grid{grid-template-rows:minmax(43px,.88fr) minmax(51px,1.12fr);gap:4px}
+ body.single-screen #tableLab[data-phase=playing] .hint-btn{min-height:24px;font-size:10px}
+}
+.mobile-menu-guests{display:flex;align-items:center;gap:7px;background:#ecf0e8;border:1px solid #d3ded3;border-radius:13px;margin-top:13px;padding:10px 12px}
+.mobile-menu-guests>b{font-size:13px;white-space:nowrap}
+.mobile-menu-guests>span{font-size:11px;color:#6c7b6e;min-width:0}
+.mobile-menu-counter{display:flex;align-items:center;gap:7px;margin-left:auto}
+.mobile-menu-counter button{height:42px;width:42px;min-width:42px;border:1px solid #d0dbd1;border-radius:10px;background:white;color:#155341;font-size:22px}
+.mobile-menu-counter strong{font-size:18px;min-width:13px;text-align:center}
+@media(max-width:900px) and (orientation:portrait){
+ body.single-screen .guest-dock.empty{display:none!important;min-height:0!important;height:0!important}
+}
+@media(max-width:620px) and (orientation:portrait){
+ body.single-screen #tableLab[data-phase=playing] .action-grid{
+   align-self:flex-end;width:min(75vw,290px);max-width:290px;margin-left:auto;
+   grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(37px,.85fr) minmax(37px,.85fr) minmax(50px,1.3fr);gap:5px 6px;
+ }
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=double]{grid-area:1 / 1 / 2 / 2}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=split]{grid-area:1 / 2 / 2 / 3}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=surrender]{grid-area:2 / 1 / 3 / 2}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=half]{grid-area:2 / 2 / 3 / 3}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=hit]{grid-area:3 / 1 / 4 / 2}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=stand]{grid-area:3 / 2 / 4 / 3}
+ body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=hit],body.single-screen #tableLab[data-phase=playing] .action-btn[data-action=stand]{font-size:17px}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen #tableLab[data-phase=playing] .action-grid{grid-template-rows:minmax(32px,.85fr) minmax(32px,.85fr) minmax(43px,1.3fr)}
+}
+.mobile-hint{display:none}
+@media(max-width:620px) and (orientation:portrait){
+ body.single-screen #tableLab[data-phase=playing] .mobile-toolrow{justify-content:flex-end;gap:5px}
+ body.single-screen #tableLab[data-phase=playing] .mobile-phase-label{margin-right:auto;font-size:10px;max-width:32%}
+ body.single-screen #tableLab[data-phase=playing] .mobile-hint{display:flex;align-items:center;justify-content:center;min-height:35px;height:35px;min-width:54px;border-radius:9px;border:1px solid #d2ded4;background:#eff4ed;color:#366350;font-size:11px;font-weight:850;white-space:nowrap}
+ body.single-screen #tableLab[data-phase=playing] #hintBtn{display:none!important}
+ body.single-screen #tableLab[data-phase=playing] .action-area{flex:1}
+ body.single-screen #tableLab[data-phase=playing] .action-grid{flex:1;grid-template-rows:minmax(40px,.85fr) minmax(40px,.85fr) minmax(57px,1.3fr)}
+}
+@media(max-width:620px) and (orientation:portrait) and (max-height:590px){
+ body.single-screen #tableLab[data-phase=playing] .mobile-hint{height:31px;min-height:31px;min-width:48px}
+ body.single-screen #tableLab[data-phase=playing] .action-grid{grid-template-rows:minmax(35px,.85fr) minmax(35px,.85fr) minmax(48px,1.3fr)}
+}
+</style></head><body>
+<div class="app-shell" id="tableLab">
+  <header class="masthead"><div class="identity"><div class="identity-mark" aria-hidden="true">A</div><div><small>TABLE LAB / POCKET EDITION</small><h1>牌桌实验室 <span style="font-weight:450;color:#7c8b7e;font-size:12px">3.3</span></h1></div></div><div class="header-actions"><button class="ghost-btn" id="soundToggle" aria-label="开启或关闭音效" aria-pressed="false">♪ <span class="optional">音效关闭</span></button><button class="ghost-btn" id="ruleOpen" aria-label="桌规说明">桌规说明</button><button class="ghost-btn" id="resetOpen" aria-label="重置游戏">↻</button></div><button class="mobile-top-menu" id="mobileTopMenu" aria-label="打开玩法与设置菜单" aria-haspopup="dialog" aria-controls="mobileMenu">☰</button><select id="mobileModePicker" aria-label="选择游戏模式"><option value="blackjack">21点</option><option value="baccarat">百家乐</option><option value="quiz">策略训练</option><option value="lab">概率实验</option><option value="terms">术语</option></select></header>
+  <nav class="modebar" aria-label="游戏模式"><button class="mode current" data-view="blackjack" aria-current="page">21点 · 多人桌</button><button class="mode" data-view="baccarat">百家乐</button><button class="mode" data-view="quiz">策略训练</button><button class="mode" data-view="lab">概率实验</button><button class="mode" data-view="terms">术语</button></nav>
+  <main>
+  <section id="view-blackjack" class="view current" aria-label="21点多人桌游戏">
+   <div class="info-strip"><div class="metrics"><div class="metric"><span>你的虚拟余额</span><strong id="balanceLabel">5,000</strong></div><div class="metric"><span>本轮净盈亏</span><strong id="netLabel">—</strong></div><div class="metric"><span>已玩局数</span><strong id="roundsLabel">0</strong></div></div><div class="table-profile"><b>MACAU TABLE / 01</b><div>6副牌 · S17 · 无底牌</div></div></div>
+   <div class="play-layout"><div class="play-left">
+    <div><div class="casino-table" id="bjStage" aria-label="21点模拟牌桌"><div class="felt-title">BLACKJACK / 3:2 / NO HOLE CARD</div><div class="felt-watermark" aria-hidden="true">BLACKJACK</div><div class="dealer-zone"><div class="seat-heading">DEALER · 荷官</div><div class="hand-stack" id="dealerCards"><span class="playing-card back"></span></div><div class="point-pill" id="dealerScore">等待发牌</div></div><div class="guest-row" id="guestSeats" aria-label="虚拟客人"></div><div class="you-zone" id="yourSeat"><div class="you-title">● YOUR SEAT · 你</div><div class="split-view" id="yourHands"><div class="split-hand"><div class="hand-stack"><div class="playing-card back"></div></div></div></div><div class="you-summary" id="youSummary">点击筹码，组合你的注额</div></div><div class="stage-flash" id="stageFlash" aria-hidden="true"><div class="spark"></div><strong id="stageFlashText">WIN</strong></div></div><div class="guest-dock" id="guestDock" aria-label="其他客人座位"></div><div class="turn-caption" id="turnCaption" aria-live="polite">准备开始 · 选择筹码后发牌</div></div>
+    <div class="status-card"><div class="panel-title" style="margin:0"><h2>本桌记录</h2><span class="muted">各位客人的资金独立计算</span></div><div class="mini-timeline" id="logRail"><span>欢迎入座</span><span>全部为虚拟筹码</span></div></div>
+   </div>
+   <aside class="control-surface" id="bjControls">
+    <div class="panel-title"><h2>你的操作台</h2><span class="muted" id="correctLabel">策略匹配率 —</span></div>
+    <div class="guest-controls"><div><b>虚拟客人</b><span class="muted" style="margin-left:5px">自动操作</span></div><div class="counter"><button id="removeGuest" aria-label="减少一位客人">−</button><b id="guestCount">2</b><button id="addGuest" aria-label="增加一位客人">+</button></div></div>
+    <div class="stake-display"><span class="muted">当前下注 <b style="font-size:10px">/ 叠加筹码</b></span><strong id="betLabel">0 <span style="font-size:12px;font-weight:650">点</span></strong></div>
+    <div class="chip-tray" id="chipTray" aria-label="选择筹码面额"></div>
+    <div class="tiny-actions"><button class="tiny-btn" id="undoBet">↶ 撤回一枚</button><button class="tiny-btn" id="clearBet">清空筹码</button><button class="tiny-btn" id="presetBet">追加 +100</button></div>
+    <div class="chip-stack" id="betStack" aria-label="已投入筹码"><span class="muted">暂无筹码</span></div>
+    <div class="mobile-toolrow" id="mobileToolRow"><span id="mobilePhaseLabel" class="mobile-phase-label">虚拟筹码 · 自由组合</span><button class="mobile-hint" id="mobileHint" aria-label="查看当前基础策略提示">策略 ?</button><button class="mobile-menu-button" id="mobileMenuBtn" aria-haspopup="dialog" aria-controls="mobileMenu" aria-label="打开玩法与设置">玩法 / 设置 <span aria-hidden="true">☰</span></button></div>
+    <div class="action-area"><div id="betControls"><button class="primary" id="dealBtn">发牌 · DEAL</button></div>
+      <div id="playerControls" class="hidden"><div class="action-grid"><button class="action-btn emphasis" data-action="hit">要牌<small>HIT</small></button><button class="action-btn" data-action="stand">停牌<small>STAND</small></button><button class="action-btn" data-action="double">加倍<small>DOUBLE</small></button><button class="action-btn" data-action="split">分牌<small>SPLIT</small></button><button class="action-btn" data-action="surrender">投降<small>SURRENDER</small></button><button class="action-btn" data-action="half">五张收半奖<small>OPTIONAL</small></button></div><button id="hintBtn" class="hint-btn">查看策略参考 · WHY?</button></div>
+      <div id="insuranceControls" class="hidden"><div style="font-weight:850;font-size:13px;margin-bottom:7px">荷官明牌A · 保险选择</div><div class="action-grid"><button class="action-btn" data-insurance="skip">不买保险</button><button class="action-btn emphasis" data-insurance="buy">买半注保险</button><button class="action-btn" data-insurance="even" id="evenBtn">天然21点收1:1</button></div></div>
+      <div id="busyControls" class="hidden"><button class="primary secondary" disabled id="busyLabel">正在发牌...</button></div>
+      <div id="roundEndControls" class="hidden"><button class="primary" id="nextRoundBtn">下一局 · NEW ROUND</button></div>
+    </div>
+    <div class="guide-panel" id="actionGuide" aria-live="polite"><b>准备下注</b>先选择一个或多个筹码，虚拟客人会和你一起入座。</div>
+    <div class="side-footer">默认桌规：澳门6副牌 / S17 / 无底牌 / 提前投降（明牌非A）/ 分牌最多4手。具体现场桌规以赌场公示为准。</div>
+   </aside></div>
+  </section>
+  <section id="view-baccarat" class="view" aria-label="百家乐模拟"><div class="layout-narrow"><div class="view-heading"><div><h2>百家乐 · 发牌教学</h2><p>看清第三张牌的自动补牌逻辑，体验庄 / 闲 / 和结算</p></div><div class="table-profile">8 DECKS · PUNTO BANCO</div></div><div class="section-grid"><div class="plain-card"><div class="info-strip"><div class="metrics"><div class="metric"><span>虚拟余额</span><strong id="baBalance">5,000</strong></div><div class="metric"><span>已玩局数</span><strong id="baRounds">0</strong></div><div class="metric"><span>累计盈亏</span><strong id="baNet">0</strong></div></div></div><div class="baccarat-felt"><div class="ba-side"><div class="ba-label">PLAYER · 闲</div><div class="hand-stack" id="baPlayerCards"></div><div class="ba-score" id="baPlayerScore">—</div></div><div class="ba-side"><div class="ba-label">BANKER · 庄</div><div class="hand-stack" id="baBankerCards"></div><div class="ba-score" id="baBankerScore">—</div></div></div><div class="guide-panel" id="baResult"><b>等待下注</b>百家乐两家均按固定补牌表行动，玩家只选择押注方向。</div></div><div class="plain-card"><h3>押哪一方？</h3><div class="ba-bet-options" id="baSides"><button data-side="banker" class="chosen">押庄</button><button data-side="player">押闲</button><button data-side="tie">押和</button></div><h3 style="margin-top:18px">选择金额</h3><div class="amount-grid" id="baBets"></div><h3 style="margin-top:19px">结算规则</h3><div class="mini-swap" id="baRules"><button data-rule="commission" class="chosen">庄赢抽佣5%</button><button data-rule="half">庄6点赢半赔</button></div><button class="primary" id="baDeal" style="margin-top:18px">发牌 & 讲解</button><button class="hint-btn" id="baReset">重置百家乐余额</button><p class="muted" style="margin-top:13px">提示：路单只记录过去，不提供可靠的下一局预测。</p></div></div></div></section>
+  <section id="view-quiz" class="view" aria-label="策略训练"><div class="layout-narrow"><div class="view-heading"><div><h2>策略训练 · 澳门桌规</h2><p>不是考你有没有赢钱，而是考你是否理解准确规则</p></div><div class="table-profile" id="quizScore">得分 0 / 0</div></div><div class="plain-card"><div class="muted" id="quizCounter">第 1 / 10 题</div><div class="q-progress"><i id="quizProgress"></i></div><h3 class="quiz-title" id="quizQuestion"></h3><div class="quiz-options" id="quizOptions"></div><div class="guide-panel hidden" id="quizExplanation"></div><button class="primary" id="quizNext" style="margin-top:15px;max-width:200px" disabled>下一题</button></div></div></section>
+  <section id="view-lab" class="view" aria-label="概率实验"><div class="layout-narrow"><div class="view-heading"><div><h2>概率实验 · 不靠感觉下注</h2><p>同样本金与停止规则下，重复模拟2,000场百家乐</p></div><div class="table-profile">MONTE CARLO · 虚拟实验</div></div><div class="section-grid"><div class="plain-card"><h3>设定实验</h3><div class="lab-fields"><label>下注方法<select id="labSystem"><option value="flat">固定每局100点</option><option value="mart">亏损后翻倍</option></select></label><label>停止规则<select id="labStop"><option value="rounds">每场最多100局</option><option value="limits">盈利500或亏损1,500停止</option></select></label></div><button class="primary" id="labRun">运行2,000场模拟</button><div class="lab-stats"><div><small>盈利场次占比</small><strong id="labWin">—</strong></div><div><small>每场平均盈亏</small><strong id="labAverage">—</strong></div><div><small>最差一场</small><strong id="labWorst">—</strong></div></div><div class="histogram" id="labHistogram"></div><div class="guide-panel" id="labExplanation"><b>模拟还未运行</b>赌场优势长期存在，但短期结果可能是正也可能是负。</div></div><div class="plain-card"><h3>为什么要做重复实验？</h3><p>多次赢小钱，仍可能被少数大亏抵消。实验中你能比较“赢钱次数”和“平均收益”这两个不同指标。</p><p>模型：八副牌标准百家乐、押庄抽佣5%，每局近似独立；不考虑筹码桌限与其他特殊规则。翻倍不会改变每笔下注的数学期望。</p><div class="guide-panel"><b>验证方法</b>保持同样设定，多运行几组，对比均值与最差结果。不要拿单次模拟的正收益作为真实获利证据。</div></div></div></div></section>
+  <section id="view-terms" class="view" aria-label="术语库"><div class="view-heading"><div><h2>术语速查 · 坐上牌桌之前</h2><p>中英文对照、老手动作与容易混淆的桌规</p></div><input class="search-field" id="termSearch" aria-label="搜索术语" placeholder="搜索：分牌、保险、S17…"></div><div class="terms-grid" id="termList"></div></section>
+  </main>
+  <div class="quick-dock hidden" id="quickDock" aria-label="快捷操作"></div>
+  <div class="global-note">仅供学习和娱乐，使用虚拟筹码，不支持真钱下注或提现。基础策略旨在减少预期损失，不能保证获利。澳门现场不同赌桌可能采用不同获批规则。<a href="https://www.dicj.gov.mo/web/cn/rules/BlackJackOU21Alt02.html" target="_blank" rel="noopener noreferrer">澳门博彩监管局21点法定规则</a></div><footer class="foot">TABLE LAB · EDUCATIONAL PLAY / 2026</footer>
+ </div>
+<div id="mobileMenu" class="mobile-menu hidden" role="dialog" aria-modal="true" aria-label="玩法与设置" aria-hidden="true">
+ <button id="mobileMenuBackdrop" class="mobile-menu-backdrop" aria-label="关闭菜单"></button>
+ <div class="mobile-menu-sheet" tabindex="-1">
+  <div class="mobile-menu-head"><div><small>TABLE LAB</small><b>玩法与设置</b></div><button id="mobileMenuClose" class="mobile-menu-close" aria-label="关闭菜单">×</button></div>
+  <div class="mobile-menu-modes" aria-label="选择玩法"><button data-menu-view="blackjack">♠ 21点</button><button data-menu-view="baccarat">◈ บาคาร่า</button><button data-menu-view="quiz">✦ 策略训练</button><button data-menu-view="lab">◫ 概率实验</button><button data-menu-view="terms">▤ 术语</button></div>
+  <div class="mobile-menu-guests"><b>虚拟客人</b><span>下局开始前可调整</span><div class="mobile-menu-counter"><button id="mobileLessGuest" aria-label="减少客人">−</button><strong id="mobileGuestCount">2</strong><button id="mobileMoreGuest" aria-label="增加客人">+</button></div></div>
+  <div class="mobile-menu-tools"><button id="mobileRulesBtn">桌规说明</button><button id="mobileSoundBtn">开启音效</button><button id="mobileResetBtn">重新开局</button></div>
+  <p>游戏仅使用虚拟筹码。切换玩法不会进行真钱交易。</p>
+ </div>
+</div>
+<div id="setupOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="setupTitle">
+<div class="modal-card setup-card"><div class="modal-head"><h2 id="setupTitle">设置初始余额</h2></div>
+<p class="setup-description">选择本次新游戏的虚拟资金。只用于学习与模拟，不涉及真钱。</p>
+<div class="setup-presets"><button type="button" data-startpreset="1000">1,000</button><button type="button" data-startpreset="5000">5,000</button><button type="button" data-startpreset="10000">10,000</button><button type="button" data-startpreset="50000">50,000</button></div>
+<label class="setup-label" for="startBalanceInput">自定义初始余额 <small>10 - 1,000,000 点</small></label>
+<input id="startBalanceInput" type="number" inputmode="numeric" min="10" max="1000000" step="1" value="5000" autocomplete="off" aria-describedby="setupError">
+<div class="setup-error" id="setupError" role="alert" aria-live="polite"></div>
+<button type="button" class="primary" id="setupConfirm">确认并开始游戏</button>
+<button type="button" class="tiny-btn setup-secondary hidden" id="setupContinue">继续之前的进度</button>
+<button type="button" class="tiny-btn setup-secondary hidden" id="setupCancel">取消</button>
+<p class="setup-footnote">初始金额同时用于21点和百家乐。两种玩法的当前余额分开计算。</p></div></div>
+<div id="rulesOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rulesTitle"><div class="modal-card"><div class="modal-head"><h2 id="rulesTitle">澳门21点 · 本桌采用的规则</h2><button id="rulesClose" class="modal-close" aria-label="关闭">×</button></div><div class="modal-body"><p>澳门法定规章允许多种发牌及桌规选项。本小游戏固定使用以下**教学桌规组合**，不代表澳门所有赌场完全一致：</p><ul><li>6副52张牌，标准洗牌，牌靴在剩余约78张时准备重新洗牌；不模拟持续洗牌机的所有细节。</li><li><b>无底牌程序：</b>先给各座位两张明牌，荷官只拿一张明牌；所有座位操作后，荷官才拿第二张。</li><li><b>S17：</b>荷官16点及以下继续拿牌，包含可按11点计算的A+6时，软17停牌。H17属于其他可选桌规，本桌不使用。</li><li><b>Natural：</b>首两张A+10点牌叫天然Blackjack，若荷官无天然21点，净赔3:2；分牌后21点只按普通21点算。</li><li><b>加倍：</b>首两张牌及允许的分牌后两张牌可加倍，只补一张；余额不足则不可加倍。</li><li><b>分牌：</b>两张<strong>相同点数或字母牌面</strong>才算一对（J+Q不算一对，但不同花色的J+J算）；本桌最多分4手，不重复拆A，拆A后每手只补一张。</li><li><b>提前投降：</b>只在原始两张牌、荷官明牌不是A时可放弃该手并取回半注。</li><li><b>保险：</b>荷官首张A时，可押半注保险；荷官天然21点时，保险净赔2:1。天然Blackjack可选1:1即收。</li><li><b>庄家天然21点：</b>在此无底牌教学版本中，对未爆牌的加倍/分牌额外筹码采用“仅原注损失”的处理，已爆牌的筹码已输。其他澳门桌可能有不同约定。</li></ul><p><b>未启用的赌场变体：</b>五张牌收半奖、额外对子 / 7 / 13以上以下投注、特殊彩、连胜注等。仅主游戏为当前模拟范围。</p><p><a href="https://www.dicj.gov.mo/web/cn/rules/BlackJackOU21Alt02.html" target="_blank" rel="noopener noreferrer">规则原文：澳门 DICJ 第57/2009号批示</a>；<a href="https://wizardofmacau.com/zh-Hans/games/blackjack" target="_blank" rel="noopener noreferrer">桌规差异说明：Wizard of Macau（历史资料）</a>。</p><div class="toggle-row"><span>减少页面动画 / 震动</span><input id="motionToggle" type="checkbox" aria-label="减少页面动画和震动"></div><p style="font-size:11px;color:#7b8b7f">此模拟仅展示一种合规规则组合；具体现场需核对桌牌、赌场告示和荷官说明。</p></div></div></div>
+<div id="resetOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="resetTitle"><div class="modal-card" style="max-width:430px"><div class="modal-head"><h2 id="resetTitle">重置所有虚拟筹码？</h2><button id="resetClose" class="modal-close" aria-label="关闭">×</button></div><div class="modal-body"><p>余额、客人模拟余额、统计记录和未完成牌局都会恢复初始状态。此操作仅影响当前设备的本地游戏数据。</p><div style="display:flex;gap:8px;margin-top:15px"><button class="tiny-btn" id="resetCancel" style="flex:1">取消</button><button class="primary" id="resetConfirm" style="flex:1">确认重置</button></div></div></div></div>
+<script>/* Macau Blackjack teaching engine: no-hole-card six-deck S17 table profile.
+ * Reference: DICJ 57/2009, articles 5-12, 16-19.
+ * Simulates a disclosed approved rules subset, not every Macau table variation.
+ */
+(function(global){
+'use strict';
+let idSeq=1;
+const ranks=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+const suits=['♠','♥','♣','♦'];
+const NPCS=[
+ {id:'kei',name:'阿 Ken',style:'稳健派',initial:'K',color:'#c7a27a'},
+ {id:'may',name:'May',style:'观察派',initial:'M',color:'#b08fcd'},
+ {id:'chi',name:'阿驰',style:'行动派',initial:'C',color:'#8bbdb1'},
+ {id:'jo',name:'Jo',style:'新手',initial:'J',color:'#d6a4a0'}
+];
+function point(c){return c.r==='A'?11:['10','J','Q','K'].includes(c.r)?10:Number(c.r)}
+function score(cards){let total=0,aces=0;for(const c of cards){total+=point(c);if(c.r==='A')aces++}let soft=false;while(total>21&&aces){total-=10;aces--}if(aces>0)soft=true;return {total,soft,bust:total>21}}
+function natural(hand){return !hand.split&&hand.cards.length===2&&score(hand.cards).total===21}
+function pair(hand){return hand.cards.length===2&&hand.cards[0].r===hand.cards[1].r}
+function shuffle(rng,decks=6){const cards=[];for(let k=0;k<decks;k++)for(let r of ranks)for(let s of suits)cards.push({r,s,id:'c'+idSeq++});for(let i=cards.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]]}return cards}
+function newHand(bet){return {cards:[],bet,split:false,splitA:false,done:false,busted:false,surrender:false,halfWin:false,action:'',result:'',net:0}}
+class MacauTable {
+ constructor(options={}){this.rng=options.rng||Math.random;this.rules={decks:6,s17:true,noHole:true,maxHands:4,earlySurrender:true,doubleAfterSplit:true,splitAOnce:true,fiveCardHalf:false,...options.rules};this.startingBalance=Number.isSafeInteger(options.startingBalance)&&options.startingBalance>=10&&options.startingBalance<=1000000?options.startingBalance:5000;this.balance=this.startingBalance;this.rounds=0;this.wins=0;this.totalNet=0;this.decisionCorrect=0;this.decisionCount=0;this.history=[];this.shoe=shuffle(this.rng,this.rules.decks);this.seats=[];this.dealer=[];this.phase='betting';this.queue=[];this.actor={seat:-1,hand:-1};this.pending=100;this.initialUserBalance=this.startingBalance;this.lastRoundNet=0;this.insuranceTaken=false;this.guestCount=2;this.logs=[];this.customDeck=null;this.people=Object.fromEntries(NPCS.map(n=>[n.id,{...n,balance:5000}]));}
+ rand(a){return a[Math.floor(this.rng()*a.length)]}
+ setTestDeck(drawOrder){this.customDeck=drawOrder.slice().reverse().map(c=>({...c,id:c.id||'test'+idSeq++}));this.shoe=this.customDeck}
+ draw(){if(!this.shoe.length)this.shoe=shuffle(this.rng,this.rules.decks);return this.shoe.pop()}
+ resetShoeIfNeeded(){if(this.shoe.length<78)this.shoe=shuffle(this.rng,this.rules.decks)}
+ get human(){return this.seats.find(s=>s.human)}
+ makeSeats(count,bet){const names=count===0?[]:count===1?['kei']:count===2?['kei','chi']:count===3?['kei','may','chi']:['kei','may','chi','jo'];const ids=['kei','may','human','chi','jo'].filter(x=>x==='human'||names.includes(x));this.seats=ids.map(id=>{const human=id==='human',person=human?{id:'human',name:'你',style:'玩家',initial:'YOU',balance:this.balance}:this.people[id];const wager=human?bet:this.rand([50,100,100,200,200,500]);if(!human&&person.balance<wager*4)person.balance=5000;const startingBalance=person.balance;person.balance-=wager;return {id,name:person.name,style:person.style,initial:person.initial,color:person.color||'#e7d2a5',human,person,originalBet:wager,startBalance:startingBalance,hands:[newHand(wager)],insurance:0,evenMoney:false,net:0,turnNote:'已下注',settled:false}})}
+ startRound(bet,count=2){if(this.phase==='dealing'||this.phase==='playing'||this.phase==='insurance'||this.phase==='dealer')return false;bet=Number(bet);if(!Number.isFinite(bet)||bet<10||!Number.isSafeInteger(bet)||bet>this.balance)return false;this.resetShoeIfNeeded();this.initialUserBalance=this.balance;this.rounds++;this.guestCount=count;this.makeSeats(count,bet);this.balance=this.human.person.balance;this.dealer=[];this.phase='dealing';this.queue=[...this.seats.map((s,i)=>({seat:i})),{dealer:true},...this.seats.map((s,i)=>({seat:i}))];this.logs=['第'+this.rounds+'局 · 各座位已下注'];this.actor={seat:-1,hand:-1};this.lastRoundNet=0;return true}
+ dealInitialOne(){if(this.phase!=='dealing'||this.queue.length===0)return null;const next=this.queue.shift(),c=this.draw();if(next.dealer)this.dealer.push(c);else this.seats[next.seat].hands[0].cards.push(c);if(this.queue.length===0)this.finishInitial();return {card:c,seat:next.seat,dealer:!!next.dealer}}
+ finishInitial(){for(const seat of this.seats){if(natural(seat.hands[0])){seat.hands[0].done=true;seat.hands[0].action='天然 Blackjack';seat.turnNote='BLACKJACK'}}if(this.dealer[0].r==='A'){this.phase='insurance';this.logs.push('荷官明牌A：可选保险；天然21点可收1:1');}else{this.phase='playing';this.selectNext()}}
+ insuranceChoice(choice){if(this.phase!=='insurance')return false;const s=this.human;if(choice==='buy'){const amount=s.originalBet/2;if(s.person.balance<amount)return false;s.insurance=amount;s.person.balance-=amount;this.balance=s.person.balance;this.insuranceTaken=true;this.logs.push('你买入半注保险 '+amount);}else if(choice==='even'&&natural(s.hands[0])){s.evenMoney=true;s.turnNote='已收1:1';this.logs.push('天然21点选择1:1结算');}else if(choice==='skip')this.logs.push('你跳过保险');else return false;this.phase='playing';this.selectNext();return true}
+ current(){if(this.phase!=='playing'||this.actor.seat<0)return null;let s=this.seats[this.actor.seat];return {seat:s,hand:s.hands[this.actor.hand],seatIndex:this.actor.seat,handIndex:this.actor.hand}}
+ selectNext(){for(let si=0;si<this.seats.length;si++){const s=this.seats[si];for(let hi=0;hi<s.hands.length;hi++){if(!s.hands[hi].done){this.actor={seat:si,hand:hi};s.turnNote=s.human?'等待你的选择':'思考中';return this.current()}}}this.actor={seat:-1,hand:-1};this.phase='dealer';return null}
+ can(action,actor=this.current()){if(!actor)return false;const {seat:s,hand:h}=actor,scoreH=score(h.cards);if(h.done)return false;if(action==='stand')return true;if(action==='hit')return scoreH.total<21&&!h.splitA;if(action==='double')return h.cards.length===2&&!h.splitA&&s.person.balance>=h.bet&&(!h.split||this.rules.doubleAfterSplit);if(action==='split')return pair(h)&&s.hands.length<this.rules.maxHands&&s.person.balance>=h.bet&&!(h.cards[0].r==='A'&&h.split);if(action==='surrender')return this.rules.earlySurrender&&!h.split&&s.hands.length===1&&h.cards.length===2&&this.dealer[0].r!=='A';if(action==='half')return this.rules.fiveCardHalf&&!h.split&&h.cards.length>=5&&!scoreH.bust&&this.dealer[0].r!=='A';return false}
+ suggest(actor=this.current()){if(!actor)return null;const {hand:h}=actor,n=score(h.cards),u=point(this.dealer[0]),can=a=>this.can(a,actor),pairRank=pair(h)?h.cards[0].r:null;
+  if(can('surrender')&&!n.soft&&((u===10&&n.total>=14&&n.total<=16)||(u===9&&n.total===16&&pairRank!=='8')))return 'surrender';
+  if(can('split')){if(pairRank==='A'||pairRank==='8')return 'split';if(pairRank==='9'&&[2,3,4,5,6,8,9].includes(u))return 'split';if(pairRank==='7'&&u>=2&&u<=7)return 'split';if(pairRank==='6'&&u>=2&&u<=6)return 'split';if(pairRank==='4'&&(u===5||u===6))return 'split';if((pairRank==='2'||pairRank==='3')&&u>=2&&u<=7)return 'split';}
+  if(can('half')&&n.total<=16&&u>=7)return 'half';
+  if(n.soft){if(n.total>=20)return 'stand';if(n.total===19)return 'stand';if(n.total===18){if(can('double')&&u>=3&&u<=6)return 'double';if([2,7,8].includes(u))return 'stand';return 'hit'}if(can('double')&&((n.total===17&&u>=3&&u<=6)||([15,16].includes(n.total)&&u>=4&&u<=6)||([13,14].includes(n.total)&&u>=5&&u<=6)))return 'double';return 'hit'}
+  if(n.total>=17)return 'stand';if(n.total>=13)return u<=6?'stand':'hit';if(n.total===12)return u>=4&&u<=6?'stand':'hit';if(n.total===11)return can('double')&&u!==11?'double':'hit';if(n.total===10)return can('double')&&u>=2&&u<=9?'double':'hit';if(n.total===9)return can('double')&&u>=3&&u<=6?'double':'hit';return 'hit'
+ }
+ apply(action){const actor=this.current();if(!this.can(action,actor))return {ok:false,error:'当前桌规或筹码余额不允许该操作'};const {seat:s,hand:h}=actor,best=this.suggest(actor);if(s.human){this.decisionCount++;if(action===best)this.decisionCorrect++;}
+  s.turnNote={hit:'要牌',stand:'停牌',double:'加倍',split:'分牌',surrender:'投降',half:'五张收半奖'}[action];h.action=s.turnNote;
+  let drawn=[];
+  if(action==='hit'){const c=this.draw();h.cards.push(c);drawn.push(c);if(score(h.cards).bust){h.busted=true;h.done=true;s.turnNote='爆牌'}else if(score(h.cards).total===21&&!(this.rules.fiveCardHalf&&h.cards.length>=5)){h.done=true;s.turnNote='21点'}}
+  else if(action==='stand')h.done=true;
+  else if(action==='double'){s.person.balance-=h.bet;h.bet*=2;const c=this.draw();h.cards.push(c);drawn.push(c);h.done=true;if(score(h.cards).bust){h.busted=true;s.turnNote='加倍爆牌'}}
+  else if(action==='split'){s.person.balance-=h.bet;const old=h.cards.slice(),isAce=old[0].r==='A';h.cards=[old[0],this.draw()];h.split=true;h.splitA=isAce;h.done=isAce||score(h.cards).total===21;const newH=newHand(h.bet);newH.cards=[old[1],this.draw()];newH.split=true;newH.splitA=isAce;newH.done=isAce||score(newH.cards).total===21;const insert=s.hands.indexOf(h);s.hands.splice(insert+1,0,newH);drawn=[h.cards[1],newH.cards[1]];}
+  else if(action==='surrender'){h.surrender=true;h.done=true;}
+  else if(action==='half'){h.halfWin=true;h.done=true;}
+  if(s.human)this.balance=s.person.balance;
+  this.logs.push(s.name+'：'+s.turnNote+(drawn.length?' ('+drawn.map(c=>c.r+c.s).join(' / ')+')':''));this.selectNext();return {ok:true,best,action,correct:action===best,drawn};}
+ dealerSecond(){if(this.phase!=='dealer'||this.dealer.length!==1)return null;const c=this.draw();this.dealer.push(c);return c}
+ dealerNatural(){return this.dealer.length===2&&score(this.dealer).total===21}
+ dealerNeeds(){if(this.phase!=='dealer'||this.dealer.length<2||this.dealerNatural())return false;const hasLive=this.seats.some(s=>s.hands.some(h=>!h.done||(!h.busted&&!h.surrender&&!h.halfWin&&!s.evenMoney&&!natural(h))));if(!hasLive)return false;const d=score(this.dealer);return d.total<17||(!this.rules.s17&&d.total===17&&d.soft)}
+ dealerHit(){if(!this.dealerNeeds())return null;let c=this.draw();this.dealer.push(c);return c}
+ settle(){if(this.phase!=='dealer'||this.dealer.length<2)return false;const d=score(this.dealer),dnat=this.dealerNatural();for(const s of this.seats){const hTotal=s.hands.reduce((sum,h)=>sum+h.bet,0);let returns=0;
+   if(dnat){let originalUnabsorbed=true;let hasBust=s.hands.some(h=>h.busted);for(const h of s.hands){if(h.busted){h.result='爆牌';continue}if(h.surrender){returns+=h.bet/2;h.result='提前投降';continue}if(h.halfWin){returns+=h.bet*1.5;h.result='五张半奖';continue}if(s.evenMoney){returns+=h.bet*2;h.result='已收1:1';continue}if(natural(h)){returns+=h.bet;h.result='天然21点和局';continue}returns+=h.bet;h.result='庄家天牌 · 退额外注';}if(!hasBust&&!s.evenMoney&&!s.hands.some(h=>h.surrender||h.halfWin||natural(h))){returns-=s.originalBet;const first=s.hands.find(h=>!h.busted);if(first)first.result='庄家天牌 · 仅输原注'}}
+   else{for(const h of s.hands){const hs=score(h.cards);if(h.busted){h.result='爆牌';continue}if(h.surrender){returns+=h.bet/2;h.result='提前投降';continue}if(h.halfWin){returns+=h.bet*1.5;h.result='五张半奖';continue}if(s.evenMoney){returns+=h.bet*2;h.result='已收1:1';continue}if(natural(h)){returns+=h.bet*2.5;h.result='BLACKJACK 3:2';continue}if(d.bust||hs.total>d.total){returns+=h.bet*2;h.result='获胜'}else if(hs.total===d.total){returns+=h.bet;h.result='和局'}else h.result='落败'}}
+   if(s.insurance&&dnat)returns+=s.insurance*3;s.person.balance+=returns;s.net=+(s.person.balance-s.startBalance).toFixed(2);s.settled=true;s.turnNote=(s.net>0?'+':'')+s.net;s.hands.forEach(h=>h.net=0)}this.balance=this.human.person.balance;this.lastRoundNet=this.human.net;this.totalNet+=this.lastRoundNet;if(this.lastRoundNet>0)this.wins++;this.phase='settled';this.logs.push('结算：荷官'+d.total+'点'+(dnat?'（天然21点）':'')+'；你'+(this.lastRoundNet>=0?'+':'')+this.lastRoundNet+'点');this.history.unshift({round:this.rounds,net:this.lastRoundNet,at:Date.now(),dealer:d.total});this.history=this.history.slice(0,30);return true}
+ reset(startingBalance=this.startingBalance){const rng=this.rng,rules=this.rules;Object.assign(this,new MacauTable({rng,rules,startingBalance}));}
+}
+const api={MacauTable,point,score,natural,pair,shuffle,NPCS};if(typeof module!=='undefined'&&module.exports)module.exports=api;global.MacauEngine=api;
+})(typeof window!=='undefined'?window:globalThis);
+</script><script>(function(){'use strict';
+const root=document.getElementById('tableLab');if(!root)return;
+const $=(id)=>document.getElementById(id),E=window.MacauEngine;
+const game=new E.MacauTable();
+const COLORS={10:['#a7a396','#faf0d6'],25:['#b4a883','#f8e9bd'],50:['#3479a9','#f0e7ca'],100:['#23705e','#e5d7ae'],200:['#9a6aad','#f0d6c9'],500:['#a95051','#ebd4c5'],1000:['#292f38','#e4c89b'],2000:['#b77c27','#fff2ce'],5000:['#734d78','#e6c89f']};
+const DENOMS=Object.keys(COLORS).map(Number);let pendingChips=[],npcCount=2,soundOn=false,motionOff=matchMedia('(prefers-reduced-motion: reduce)').matches,working=false,seen=new Set(),audioContext=null,view='blackjack',roundMessages=[],configured=false,startingBalance=5000,hasPriorProgress=false;
+const fmt=n=>Number(n).toLocaleString('zh-CN',{maximumFractionDigits:2});
+const sleep=ms=>new Promise(r=>setTimeout(r,window.__GAME_TEST_MODE?4:motionOff?15:ms));
+function text(el,text){el.textContent=text}
+function note(title,msg,warn=false){$('actionGuide').className='guide-panel'+(warn?' warn':'');$('actionGuide').innerHTML='<b>'+title+'</b>'+msg}
+function sound(kind='tap'){if(!soundOn)return;try{audioContext=audioContext||new (window.AudioContext||window.webkitAudioContext)();if(audioContext.state==='suspended')audioContext.resume();const o=audioContext.createOscillator(),g=audioContext.createGain(),now=audioContext.currentTime;const v={deal:[490,.06,'sine'],chip:[270,.08,'triangle'],win:[740,.21,'sine'],loss:[210,.12,'sawtooth'],tap:[360,.045,'sine']}[kind]||[360,.05,'sine'];o.type=v[2];o.frequency.setValueAtTime(v[0],now);if(kind==='win')o.frequency.exponentialRampToValueAtTime(1080,now+.16);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.075,now+.014);g.gain.exponentialRampToValueAtTime(.0001,now+v[1]);o.connect(g);g.connect(audioContext.destination);o.start(now);o.stop(now+v[1]+.02)}catch(e){}}
+function flash(message,positive=true){if(motionOff)return;const stage=$('bjStage'),fx=$('stageFlash');text($('stageFlashText'),message);fx.classList.toggle('loss',!positive);fx.classList.remove('visible');stage.classList.remove('jolt','reward');void stage.offsetWidth;fx.classList.add('visible');stage.classList.add(positive?'reward':'jolt');setTimeout(()=>{fx.classList.remove('visible');stage.classList.remove('jolt','reward')},1000)}
+function chipMarkup(denom,mini=false){const color=COLORS[denom]||COLORS[100];return mini?`<span class="chip-mini" style="--c:${color[0]}" title="${denom}点">${denom>=1000?denom/1000+'k':denom}</span>`:`<span class="chip-disc" style="--c:${color[0]};--t:${color[1]}"><span>${denom>=1000?denom/1000+'k':denom}</span></span>`}
+function cardHTML(c,large=false){if(!c)return '<div class="playing-card back" aria-label="牌背"></div>';const fresh=!seen.has(c.id);seen.add(c.id);const red=c.s==='♥'||c.s==='♦';const tilt=((String(c.id).length%5)-2)*1.3;return `<div class="playing-card ${red?'red':''} ${fresh?'dealt':''}" style="--tilt:${tilt}deg" title="${c.r}${c.s}" aria-label="${c.r}${c.s}"><span class="corner">${c.r}</span><span class="rank">${c.r}</span><span class="suit">${c.s}</span></div>`}
+function handHTML(cards){return cards.length?cards.map(c=>cardHTML(c)).join(''):cardHTML(null)}
+function log(text){roundMessages.unshift(text);roundMessages=roundMessages.slice(0,5);$('logRail').innerHTML=roundMessages.map(x=>'<span>'+escapeHtml(x)+'</span>').join('')}
+function escapeHtml(t){return String(t).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]))}
+function pending(){return pendingChips.reduce((a,b)=>a+b,0)}
+function isBetting(){return game.phase==='betting'&&!working&&configured}
+function setPending(v){if(!isBetting())return;pendingChips=[];let rest=Math.max(0,Math.min(v,game.balance));for(let x of [...DENOMS].reverse())while(rest>=x&&pendingChips.length<70){pendingChips.push(x);rest-=x}renderBJ()}
+function flyChip(btn,denom){if(motionOff||!btn)return;const from=btn.getBoundingClientRect(),to=$('betStack').getBoundingClientRect();if(!from.width||!to.width)return;const el=document.createElement('div');el.className='chip-fly';el.style.setProperty('--fly',COLORS[denom][0]);el.style.left=(from.left+from.width/2-17)+'px';el.style.top=(from.top+from.height/2-17)+'px';el.textContent=denom>=1000?denom/1000+'k':denom;document.body.appendChild(el);requestAnimationFrame(()=>{el.style.transform=`translate(${to.left+Math.min(58,to.width*.5)-from.left-from.width/2}px,${to.top+Math.min(20,to.height*.5)-from.top-from.height/2}px) scale(.55)`;el.style.opacity='0'});setTimeout(()=>el.remove(),460)}
+function load(){try{const p=JSON.parse(localStorage.getItem('tableLabMacau3')||'{}');hasPriorProgress=Number.isFinite(p.balance)&&Number.isFinite(p.rounds)&&p.rounds>0;if(Number.isSafeInteger(p.startingBalance)&&p.startingBalance>=10&&p.startingBalance<=1000000)startingBalance=p.startingBalance;configured=p.configured===true;if(Number.isFinite(p.balance)&&p.balance>=0&&p.balance<=1e8)game.balance=p.balance;game.startingBalance=startingBalance;if(Number.isInteger(p.rounds)&&p.rounds>=0)game.rounds=p.rounds;if(Number.isFinite(p.totalNet))game.totalNet=p.totalNet;if(Number.isFinite(p.wins))game.wins=p.wins;if(Number.isFinite(p.decisionCount))game.decisionCount=p.decisionCount;if(Number.isFinite(p.decisionCorrect))game.decisionCorrect=p.decisionCorrect;if(Array.isArray(p.history))game.history=p.history.slice(0,30);if(Number.isInteger(p.npcCount))npcCount=Math.min(4,Math.max(0,p.npcCount));if(typeof p.soundOn==='boolean')soundOn=p.soundOn;if(typeof p.motionOff==='boolean')motionOff=p.motionOff}catch(e){};
+ba.balance=startingBalance;}
+function save(){if(!configured)return;try{localStorage.setItem('tableLabMacau3',JSON.stringify({balance:game.balance,startingBalance,configured:true,rounds:game.rounds,totalNet:game.totalNet,wins:game.wins,decisionCount:game.decisionCount,decisionCorrect:game.decisionCorrect,history:game.history,npcCount,soundOn,motionOff}))}catch(e){}}
+function renderChips(){const selected=pending();text($('betLabel'),fmt(selected)+' 点');const counts=new Map();pendingChips.forEach(d=>counts.set(d,(counts.get(d)||0)+1));$('betStack').innerHTML=pendingChips.length?[...counts].sort((a,b)=>a[0]-b[0]).map(([d,n])=>`<div class="chip-pile" title="${fmt(d)} 点，${n}枚" aria-label="${fmt(d)}点筹码${n}枚"><span class="chip-mini pile-bottom" style="--c:${COLORS[d][0]}"></span><span class="chip-mini pile-top" style="--c:${COLORS[d][0]}">${d>=1000?d/1000+'k':d}</span><b>×${n}</b></div>`).join(''):'<span class="muted">'+'请点击下方筹码累加下注'+'</span>';
+$('chipTray').querySelectorAll('[data-chip]').forEach(b=>{const d=Number(b.dataset.chip);b.disabled=!isBetting()||selected+d>game.balance});$('undoBet').disabled=!isBetting()||pendingChips.length===0;$('clearBet').disabled=!isBetting()||pendingChips.length===0;$('presetBet').disabled=!isBetting()||selected+100>game.balance;
+}
+function addChip(d,btn){if(!isBetting()||!COLORS[d]||!Number.isSafeInteger(d))return false;if(pending()+d>game.balance){note('余额不足','当前筹码总额不能超过虚拟余额。',true);return false;}pendingChips.push(d);flyChip(btn,d);renderBJ();sound('chip');return true;}
+function validStartBalance(v){const s=String(v).trim();if(!/^\d+$/.test(s))return null;const n=Number(s);return Number.isSafeInteger(n)&&n>=10&&n<=1000000?n:null;}
+function openSetup(initial=false){$('setupError').textContent='';$('startBalanceInput').value=String(startingBalance);$('setupContinue').classList.toggle('hidden',!initial||!hasPriorProgress);$('setupCancel').classList.toggle('hidden',initial&&!configured);$('setupTitle').textContent=initial?'设置初始余额':'重新设定虚拟余额';showModal('setupOverlay');$('startBalanceInput').focus();$('startBalanceInput').select();}
+function closeSetup(){if(!configured)return;closeModal('setupOverlay');}
+function startNewGame(){if(working)return;const amount=validStartBalance($('startBalanceInput').value);if(amount===null){$('setupError').textContent='请输入 10 至 1,000,000 的整数虚拟点数。';$('startBalanceInput').focus();return;}startingBalance=amount;configured=true;game.reset(startingBalance);ba.balance=startingBalance;ba.rounds=0;ba.net=0;ba.player=[];ba.banker=[];ba.shoe=E.shuffle(Math.random,8);pendingChips=[];npcCount=2;seen.clear();roundMessages=[];closeModal('setupOverlay');renderBJ();baRender();log('新游戏已开始');note('已设置虚拟余额','初始余额'+' '+fmt(amount)+' 点。可点击不同面额筹码累加下注。');hasPriorProgress=false;save();}
+function placeGuestSeats(){const target=window.matchMedia('(max-width:900px) and (orientation:portrait)').matches?$('guestDock'):$('bjStage');const el=$('guestSeats');if(target&&el.parentNode!==target)target.appendChild(el)}
+function renderBJ(){placeGuestSeats();const human=game.human,phase=game.phase;root.dataset.phase=phase;let n=game.lastRoundNet;text($('balanceLabel'),fmt(game.balance));text($('netLabel'),phase==='settled'?(n>0?'+':'')+fmt(n):game.rounds&&game.totalNet!==0?'累计 '+(game.totalNet>0?'+':'')+fmt(game.totalNet):'—');text($('roundsLabel'),game.rounds);text($('guestCount'),npcCount);text($('mobileGuestCount'),npcCount);$('mobileMoreGuest').disabled=!isBetting()||npcCount===4;$('mobileLessGuest').disabled=!isBetting()||npcCount===0;text($('correctLabel'),game.decisionCount?'策略匹配 '+Math.round(game.decisionCorrect/game.decisionCount*100)+'%':'策略匹配率 —');$('addGuest').disabled=!isBetting()||npcCount===4;$('removeGuest').disabled=!isBetting()||npcCount===0;
+ let dealer=game.dealer; $('dealerCards').innerHTML=dealer.length?handHTML(dealer):cardHTML(null);text($('dealerScore'),dealer.length===0?'等待发牌':dealer.length===1?'明牌 '+E.point(dealer[0])+'点':E.score(dealer).total+(E.score(dealer).soft?' · 软':'')+'点');
+ const guests=game.seats.filter(s=>!s.human);$('guestDock').classList.toggle('empty',!guests.length&&npcCount===0);$('guestSeats').innerHTML=guests.length?guests.map(s=>{const active=game.current()?.seat.id===s.id;return `<div class="guest-seat ${active?'active-turn':''}"><div class="guest-top"><i class="avatar" style="background:${s.color}">${s.initial}</i><span>${escapeHtml(s.name)}</span></div><div class="hand-stack">${s.hands.length>1?s.hands.map(h=>'<span style="color:#ffebc0;font-size:10px">['+E.score(h.cards).total+']</span>').join(''):handHTML(s.hands[0].cards)}</div><span class="guest-bet">${s.originalBet} 筹码 · ${s.hands[0].cards.length?E.score(s.hands[0].cards).total+'点':'等待'}</span><div class="guest-note">${escapeHtml(s.turnNote||s.style)}</div></div>`}).join(''):(npcCount?(['kei','may','chi','jo'].slice(0,npcCount).map((id,i)=>{const p=E.NPCS.find(x=>x.id===id);return `<div class="guest-seat"><div class="guest-top"><i class="avatar" style="background:${p.color}">${p.initial}</i><span>${p.name}</span></div><div class="hand-stack">${cardHTML(null)}</div><div class="guest-note">等待入座</div></div>`}).join('')):'<div class="guest-seat" style="max-width:225px;width:auto"><div class="guest-note">独自练习 · 可增加虚拟客人</div></div>');
+ const activeH=game.current();$('yourHands').innerHTML=human&&human.hands.length?human.hands.map((h,i)=>{const active=activeH&&activeH.seat.human&&activeH.handIndex===i;const v=E.score(h.cards);return `<div class="split-hand ${active?'active-turn':''}">${human.hands.length>1?`<div class="split-name">第${i+1}手 · ${fmt(h.bet)}点</div>`:''}<div class="hand-stack">${handHTML(h.cards)}</div><span class="point-pill">${h.cards.length?v.total+'点'+(v.soft?' · 软':''):''}${h.done&&h.action?' · '+escapeHtml(h.result||h.action):''}</span></div>`}).join(''):'<div class="split-hand"><div class="hand-stack">'+cardHTML(null)+'</div></div>';
+ $('youSummary').textContent=human?('下注 '+fmt(human.hands.reduce((a,h)=>a+h.bet,0))+' 点'+(game.phase==='settled'?' · 净盈亏 '+(human.net>=0?'+':'')+fmt(human.net):'')):('候选下注 '+fmt(pending())+' 点');
+ const notes={betting:'筹码已就绪 · 可邀请0—4位虚拟客人',dealing:'正在按座位顺序发牌…',insurance:'荷官明牌 A · 请选择保险',playing:activeH?(activeH.seat.human?'轮到你 · 根据荷官明牌决定操作':'轮到 '+activeH.seat.name+' · 自动行动中'):'正在轮流操作',dealer:'所有座位完成 · 荷官补牌',settled:'本局结算已完成 · 可开始下一局'};text($('turnCaption'),notes[phase]||'准备下注');$('mobileHint').disabled=!(phase==='playing'&&activeH&&activeH.seat.human&&!working);text($('mobilePhaseLabel'),phase==='betting'?'客人 '+npcCount+' 人 · 筹码可叠加':phase==='playing'?(activeH?.seat.human?'你的回合 · '+E.score(activeH.hand.cards).total+'点':'等待其他客人'):phase==='settled'?'本局已结算':phase==='insurance'?'保险选择':'正在发牌');
+ $('betControls').classList.toggle('hidden',phase!=='betting');$('playerControls').classList.toggle('hidden',!(phase==='playing'&&activeH&&activeH.seat.human&&!working));$('insuranceControls').classList.toggle('hidden',phase!=='insurance'||working);$('busyControls').classList.toggle('hidden',!working||phase==='settled');$('roundEndControls').classList.toggle('hidden',phase!=='settled');$('dealBtn').disabled=working||pending()<10||pending()>game.balance;$('dealBtn').textContent='发牌 · '+fmt(pending())+' 点';
+ if(phase==='playing'&&activeH&&activeH.seat.human&&!working){root.querySelectorAll('[data-action]').forEach(b=>{b.disabled=!game.can(b.dataset.action)});}if(phase==='insurance'){const h=human?.hands?.[0];$('evenBtn').disabled=!h||!E.natural(h);root.querySelector('[data-insurance="buy"]').disabled=human.person.balance<human.originalBet/2;}
+ if(phase==='settled'&&game.balance<10)text($('nextRoundBtn'),'余额不足 · 重置开始');
+ const dock=$('quickDock');const dockActive=view==='blackjack'&&!working&&(phase==='insurance'||(phase==='playing'&&activeH&&activeH.seat.human));dock.classList.toggle('hidden',!dockActive);
+ if(dockActive){if(phase==='insurance'){dock.innerHTML='<button data-quick-insurance="skip">不买保险</button><button data-quick-insurance="buy">买保险</button><button data-quick-insurance="even">收1:1</button>';dock.querySelector('[data-quick-insurance="even"]').disabled=!E.natural(human.hands[0]);dock.querySelector('[data-quick-insurance="buy"]').disabled=human.person.balance<human.originalBet/2;}else{dock.innerHTML=[['hit','要牌'],['stand','停牌'],['double','加倍'],['split','分牌'],['surrender','投降']].map(x=>`<button data-quick-action="${x[0]}" ${game.can(x[0])?'':'disabled'}>${x[1]}</button>`).join('');}}
+ renderChips();}
+function chooseNPC(actor){let best=game.suggest(actor)||'stand';const profile=actor.seat.id;if(profile==='jo'&&game.rng()<.14){let options=['hit','stand'].filter(x=>game.can(x,actor));if(options.length)best=game.rand(options)}if(profile==='chi'&&best==='stand'&&game.rng()<.07&&game.can('hit',actor))best='hit';return best}
+async function autoPlay(){while(game.phase==='playing'){const a=game.current();if(!a)break;if(a.seat.human){working=false;renderBJ();note('轮到你：'+E.score(a.hand.cards).total+'点','观察荷官'+E.point(game.dealer[0])+'点明牌，决定是否要牌、停牌、加倍或分牌。可点击下方查看策略参考。');return}working=true;renderBJ();await sleep(460);const action=chooseNPC(a);const result=game.apply(action);sound(action==='hit'?'deal':'chip');log(a.seat.name+' · '+({hit:'要牌',stand:'停牌',double:'加倍',split:'分牌',surrender:'投降',half:'收半奖'}[action]||action));renderBJ();await sleep(result.drawn?.length?330:150)}if(game.phase==='dealer')await dealerPlay();}
+async function dealerPlay(){working=true;renderBJ();note('荷官结算','玩家座位已完成。荷官现在领取第二张牌，并按S17规则补牌。');await sleep(360);game.dealerSecond();sound('deal');renderBJ();await sleep(420);while(game.dealerNeeds()){game.dealerHit();sound('deal');renderBJ();await sleep(370)}game.settle();working=false;renderBJ();const net=game.lastRoundNet;flash(net>0?`WIN +${fmt(net)}`:net<0?`−${fmt(Math.abs(net))}`:'PUSH',net>=0);sound(net>0?'win':net<0?'loss':'tap');log('本局 '+(net>0?'赢得 ':net<0?'损失 ':'和局 ')+(net===0?'0':fmt(Math.abs(net)))+' 点');let h=game.human;note(net>0?'本局净赢 '+fmt(net)+' 点':net<0?'本局净亏 '+fmt(Math.abs(net))+' 点':'本局不输不赢',h.hands.map((x,i)=>'第'+(i+1)+'手：'+x.result).join('；')+'。结果不证明或否定策略的数学质量。',net<0);save();}
+async function beginRound(){if(working)return;if(game.phase==='settled'){game.phase='betting';renderBJ();return}if(game.phase!=='betting')return;const wager=pending();if(wager<10||wager>game.balance){note('筹码不足','先选择至少25点的筹码，并确保没有超过当前余额。',true);return}working=true;const ok=game.startRound(wager,npcCount);if(!ok){working=false;return}seen.clear();roundMessages=[];log('第 '+game.rounds+' 局 · '+(npcCount+1)+' 座入场');renderBJ();note('开始发牌','按照澳门无底牌发牌流程：各座位先收到首两张，荷官只拿一张明牌。');while(game.queue.length){await sleep(140);game.dealInitialOne();sound('deal');renderBJ()}working=false;renderBJ();if(game.phase==='insurance'){note('保险不是保护本金','荷官明牌A：你可以追加半注保险。即使不买保险也可继续。');return}await autoPlay();}
+async function userAction(action){if(working||game.phase!=='playing'||!game.current()?.seat.human)return;const result=game.apply(action);if(!result.ok){note('操作不可用',result.error,true);return}sound(action==='hit'?'deal':'chip');renderBJ();const zh={hit:'要牌',stand:'停牌',double:'加倍',split:'分牌',surrender:'投降',half:'五张收半奖'};log('你 · '+zh[action]);if(result.action===result.best)note('策略参考匹配',zh[action]+'与本桌常见基础策略建议相符。正确选择也可能输掉这一局。');else note('和策略参考不同','你选择'+zh[action]+'；常见建议为'+zh[result.best]+'。这不意味着本局必然亏损。',true);if(result.drawn?.length)await sleep(270);await autoPlay();}
+async function chooseInsurance(action){if(working||game.phase!=='insurance')return;if(!game.insuranceChoice(action)){note('无法购买','余额不足或操作不适用于当前手牌。',true);return}renderBJ();await autoPlay();}
+const hints={hit:'要牌 Hit',stand:'停牌 Stand',double:'加倍 Double',split:'分牌 Split',surrender:'投降 Surrender',half:'五张收半奖 Half-win'};
+function showHint(){const actor=game.current();if(!actor||!actor.seat.human)return;const best=game.suggest(actor),score=E.score(actor.hand.cards);note('常见策略参考 · '+hints[best],`当前${score.total}${score.soft?'软':''}点，对荷官${E.point(game.dealer[0])}。澳门规则有特殊投降和无底牌细节，这里是本桌参考动作，不保证该局获胜。`);}
+function prepareNext(){if(game.phase!=='settled')return;if(game.balance<10){openSetup(false);return}game.phase='betting';if(pending()>game.balance){pendingChips=[];if(game.balance>=100)pendingChips=[100];else if(game.balance>=10)pendingChips=[10]}renderBJ();note('下一局已就绪','可以继续使用原来的筹码，也可加注或撤回。');}
+// Baccarat: eight decks, punto banco / third-card fixed rules.
+const ba={balance:5000,rounds:0,bet:100,side:'banker',rule:'commission',net:0,shoe:E.shuffle(Math.random,8),player:[],banker:[]};
+function baDraw(){if(ba.shoe.length<38)ba.shoe=E.shuffle(Math.random,8);return ba.shoe.pop()}
+function baPoint(c){return c.r==='A'?1:E.point(c)===10?0:Number(c.r)}function baScore(arr){return arr.reduce((x,c)=>x+baPoint(c),0)%10}
+function baBankThird(b,t){return b<=2||(b===3&&t!==8)||(b===4&&t>=2&&t<=7)||(b===5&&t>=4&&t<=7)||(b===6&&(t===6||t===7))}
+function baRender(){text($('baBalance'),fmt(ba.balance));text($('baRounds'),ba.rounds);text($('baNet'),(ba.net>0?'+':'')+fmt(ba.net));$('baPlayerCards').innerHTML=ba.player.length?handHTML(ba.player):cardHTML(null);$('baBankerCards').innerHTML=ba.banker.length?handHTML(ba.banker):cardHTML(null);text($('baPlayerScore'),ba.player.length?baScore(ba.player)+'点':'—');text($('baBankerScore'),ba.banker.length?baScore(ba.banker)+'点':'—');$('baDeal').disabled=ba.balance<ba.bet;root.querySelectorAll('[data-side]').forEach(b=>b.classList.toggle('chosen',b.dataset.side===ba.side));root.querySelectorAll('[data-rule]').forEach(b=>b.classList.toggle('chosen',b.dataset.rule===ba.rule));root.querySelectorAll('[data-babet]').forEach(b=>b.classList.toggle('chosen',+b.dataset.babet===ba.bet))}
+function baDeal(){if(ba.balance<ba.bet)return;ba.balance-=ba.bet;ba.rounds++;ba.player=[baDraw(),baDraw()];ba.banker=[baDraw(),baDraw()];let p=baScore(ba.player),b=baScore(ba.banker),steps=[`起手：闲${p}点 / 庄${b}点。`];if(p>=8||b>=8)steps.push('出现8或9点天牌：双方停止补牌。');else{let t=null;if(p<=5){let c=baDraw();ba.player.push(c);t=baPoint(c);steps.push(`闲0—5点补牌：第三张是${c.r}${c.s}（${t}点）。`)}else steps.push('闲6—7点：停牌。');let bankDraw=t===null?b<=5:baBankThird(b,t);if(bankDraw){let c=baDraw();ba.banker.push(c);steps.push(`庄按第三张牌补牌表再补${c.r}${c.s}。`)}else steps.push('庄按补牌表停牌。')}p=baScore(ba.player);b=baScore(ba.banker);let win=p>b?'player':b>p?'banker':'tie',payout=0;if(win===ba.side){payout=ba.bet*(win==='tie'?9:win==='player'?2:ba.rule==='commission'?1.95:b===6?1.5:2)}else if(win==='tie')payout=ba.bet;ba.balance+=payout;const net=payout-ba.bet;ba.net+=net;baRender();sound(net>0?'win':net<0?'loss':'tap');$('baResult').className='guide-panel'+(net<0?' warn':'');$('baResult').innerHTML='<b>本局 '+(net>0?'+':'')+fmt(net)+' 点 · '+(win==='player'?'闲赢':win==='banker'?'庄赢':'和局')+'</b>'+steps.join('<br>')+'最终闲'+p+'点、庄'+b+'点。';}
+// Short, keyed training, reflecting this table variant.
+const quiz=[
+{q:'本桌采用澳门「无底牌」发牌程序。荷官的第二张牌什么时候拿？',opts:['开局和所有人一起拿','所有玩家决定完成后拿','你下注时立即拿','只在有人要牌时拿'],answer:1,why:'无底牌程序中，荷官先取得一张明牌；玩家完成决定后才取得第二张。'},
+{q:'你持有 J 与 Q，能当作一对直接分牌吗？',opts:['可以，都是10点','不可以，牌种不同','只在荷官A时可以','只有下注200点可以'],answer:1,why:'澳门法定规章的对子示例说明：J+Q不构成一对；同点值不等于相同牌种。'},
+{q:'下注200虚拟点，天然Blackjack独赢，按3:2净赚多少？',opts:['200点','250点','300点','400点'],answer:2,why:'净利润=200×1.5=300点；原注200也一并退回。'},
+{q:'本桌荷官首张A，你现在还能「提前投降」吗？',opts:['可以，任何明牌都能投降','不可以，明牌A禁止投降','只有硬16可以','必须先买保险'],answer:1,why:'本桌按澳门法定条文第18条：荷官首张不是A时方可放弃牌局。'},
+{q:'在S17规则中，荷官手持 A+6（软17）应怎样操作？',opts:['停牌','再补一张','重新洗牌','由玩家投票'],answer:0,why:'S17即荷官在软17停牌；其他桌可能采用H17，须看桌牌。'},
+{q:'澳门本桌，首两张都是A，选择分牌以后会怎样？',opts:['每手只再拿一张','每手必须再拿两张','每手任意加倍','再来一张就算天然21点'],answer:0,why:'本桌拆A后每手只补一张，且分牌后的21点不是天然Blackjack。'},
+{q:'初注100点，选择加倍，需要再投入多少，之后可补几张？',opts:['再投50，补1张','再投100，补1张','再投100，补2张','无需加钱，补1张'],answer:1,why:'加倍需额外投入相同注额100点，随后只补一张。'},
+{q:'本桌无底牌版本，分牌后均未爆牌，但荷官最终取得天然21点，额外分牌注如何处理？',opts:['所有分牌注全部没收','仅输原注，其他有效额外分牌注返还','所有分牌注赔3:2','玩家自动获胜'],answer:1,why:'本桌教学版采用仅原注损失机制；已爆牌投注已输。其他赌场变体可能不同。'},
+{q:'你押百家乐庄100点，规则为庄赢抽佣5%，最终庄赢。本局净利润？',opts:['100点','95点','50点','0点'],answer:1,why:'扣除5%佣金后净赚95点。'},
+{q:'某规则下80%的实验场次都以盈利结束，但平均每场仍然亏损。以下结论更准确？',opts:['这代表可以稳定赚钱','这只是表示赢的场次多，长期均值仍可能为负','加大赌注能必然反转亏损','说明赌场优势不存在'],answer:1,why:'常赢不等于长期正期望；少数较大亏损可能抵消多数小赢。'}];
+let quizAt=0,quizScore=0,quizAnswered=false;
+function renderQuiz(){const q=quiz[quizAt];text($('quizCounter'),'第 '+(quizAt+1)+' / '+quiz.length+' 题');text($('quizScore'),'得分 '+quizScore+' / '+(quizAt+(quizAnswered?1:0)));$('quizProgress').style.width=(quizAt/quiz.length*100)+'%';text($('quizQuestion'),q.q);$('quizOptions').innerHTML=q.opts.map((o,i)=>`<button data-answer="${i}">${String.fromCharCode(65+i)} · ${escapeHtml(o)}</button>`).join('');$('quizExplanation').classList.add('hidden');$('quizNext').disabled=true;quizAnswered=false;$('quizNext').textContent=quizAt===quiz.length-1?'查看成绩':'下一题'}
+function answerQuiz(i){if(quizAnswered)return;const q=quiz[quizAt];quizAnswered=true;if(q.answer===i)quizScore++;root.querySelectorAll('[data-answer]').forEach(b=>{b.disabled=true;if(+b.dataset.answer===q.answer)b.classList.add('correct');else if(+b.dataset.answer===i)b.classList.add('wrong')});text($('quizScore'),'得分 '+quizScore+' / '+(quizAt+1));$('quizExplanation').classList.remove('hidden');$('quizExplanation').innerHTML='<b>'+(q.answer===i?'回答正确':'规则需要修正')+'</b>'+q.why;$('quizNext').disabled=false}
+function nextQuiz(){if(!quizAnswered)return;if(quizAt===quiz.length-1){const final=quizScore;quizAt=0;quizScore=0;renderQuiz();$('quizExplanation').classList.remove('hidden');$('quizExplanation').innerHTML='<b>本轮完成 '+final+' / '+quiz.length+'</b>得分只反映规则理解程度，不代表可以长期盈利。';return}quizAt++;renderQuiz()}
+function seeded(seed){let x=seed||314159;return ()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296}}
+function runLab(){const rng=seeded(Date.now()>>>0),sys=$('labSystem').value,stop=$('labStop').value;let results=[],nwin=0,sum=0,worst=0;for(let k=0;k<2000;k++){let bal=5000,stake=100;for(let r=0;r<100;r++){const bet=sys==='flat'?100:stake;if(bet>bal)break;bal-=bet;let x=rng();if(x<.458597){bal+=bet*1.95;stake=100}else if(x<.458597+.446247){if(sys==='mart')stake=Math.min(stake*2,6400)}else bal+=bet;if(stop==='limits'&&(bal>=5500||bal<=3500))break}const net=bal-5000;results.push(net);if(net>0)nwin++;sum+=net;worst=Math.min(worst,net)}const avg=sum/2000;text($('labWin'),(nwin/20).toFixed(1)+'%');text($('labAverage'),(avg>0?'+':'')+fmt(avg));text($('labWorst'),fmt(worst));const binCount=24,counts=Array(binCount).fill(0),max=5000,min=-5000;results.forEach(n=>{let index=Math.max(0,Math.min(binCount-1,Math.floor((n-min)/(max-min)*binCount)));counts[index]++});const peak=Math.max(...counts);$('labHistogram').innerHTML=counts.map((n,i)=>`<i class="${i<binCount/2?'neg':''}" style="height:${Math.max(1,100*n/peak)}%" title="${n}场"></i>`).join('');$('labExplanation').innerHTML='<b>结果：'+(nwin/20).toFixed(1)+'%场次以盈利结束</b>但平均每场净盈亏为'+(avg>0?'+':'')+fmt(avg)+'点。单批随机模拟可能出现正均值，不能据此认为存在正期望策略。'}
+const terms=[['No Hole Card','无底牌','荷官先拿一张明牌，等玩家结束后才拿第二张；影响天然Blackjack的结算风险。'],['S17 / H17','软17停牌 / 补牌','S17软17停牌，H17软17再拿一张。澳门不同赌桌可能采用不同选项。'],['Natural Blackjack','天然21点','起手A+10点牌；本桌获胜净赔3:2。分牌产生的21点不算天然。'],['OBBO / OBO','额外筹码返还机制','无底牌游戏荷官天然21点时，原注与加倍/分牌额外注的处理方式；看具体桌规。'],['Early Surrender','提前投降','在确认荷官是否有天然21点前放弃该手，通常损失半注；本桌不允许对A投降。'],['Even Money','即收1:1','自己天然Blackjack、荷官明牌A时可选择固定1:1收益。'],['Insurance','保险','荷官明牌A时的额外注，通常最多半注，命中荷官天然21点净赔2:1。'],['Double Down / DAS','加倍 / 分牌后加倍','原注追加等额筹码，只拿一张牌。DAS表示分牌后仍可加倍。'],['Split / Resplit','分牌 / 再分','两张相同牌种拆成独立手牌，须追加同额投注。'],['Five-card Half Win','五张收半奖','部分获批桌规允许持5张未爆牌时自选净赚半注，本桌未启用。'],['Blackjack 3:2','天然21点赔率','下注100点，独赢净赚150点，不是100点。'],['Shoe','牌靴','多副牌的发牌容器，跟持续洗牌机不同。'],['Bankroll','资金预算','预先划定可接受损失的额度，不能改变赌场优势。'],['House Edge','赌场优势','长期每单位累计投注的平均预期损失比例。'],['Expected Value','期望值','在同样决策条件下，长期重复后的平均盈亏。'],['Basic Strategy','基础策略','针对已知桌规减少数学期望损失的方法；不等于稳赚。'],['Running / True Count','运行计数 / 真实计数','根据已出现的牌估计剩余牌分布的方法。持续洗牌机削弱其应用条件。'],['Commission','抽佣','传统百家乐押庄获胜时，常见净利润扣5%佣金。'],['Big Road','百家乐大路','对过往结果的记录，可用来回看，不保证预测下一局。'],['Martingale','翻倍追损','连续亏损时指数级扩大筹码需要，面临余额及桌限约束。']];
+function renderTerms(){const key=$('termSearch').value.trim().toLowerCase();const matched=terms.filter(t=>t.join(' ').toLowerCase().includes(key));$('termList').innerHTML=matched.map(t=>'<div class="term"><small>'+escapeHtml(t[0])+'</small><b>'+escapeHtml(t[1])+'</b><p>'+escapeHtml(t[2])+'</p></div>').join('')||'<p class="muted">没有找到相应术语。</p>'}
+function setView(id){view=id;document.body.classList.toggle('single-screen',id==='blackjack');if(id==='blackjack')window.scrollTo(0,0);if($('mobileModePicker'))$('mobileModePicker').value=id;renderBJ();root.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('current',b.dataset.view===id);if(b.dataset.view===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});root.querySelectorAll('.view').forEach(p=>p.classList.toggle('current',p.id==='view-'+id));save()}
+function showModal(id){$(id).classList.add('open');$(id).querySelector('button')?.focus()}function closeModal(id){$(id).classList.remove('open')}
+function renderToggles(){$('soundToggle').setAttribute('aria-pressed',String(soundOn));$('soundToggle').innerHTML=soundOn?'♪ <span class="optional">音效开启</span>':'♪ <span class="optional">音效关闭</span>';$('motionToggle').checked=motionOff;document.body.classList.toggle('motion-off',motionOff);text($('mobileSoundBtn'),soundOn?'关闭音效':'开启音效')}
+function openMobileMenu(){const m=$('mobileMenu');m.classList.remove('hidden');m.classList.add('open');m.setAttribute('aria-hidden','false');m.querySelector('.mobile-menu-sheet').focus();m.querySelectorAll('[data-menu-view]').forEach(b=>b.classList.toggle('selected',b.dataset.menuView===view));}
+function closeMobileMenu(){const m=$('mobileMenu');m.classList.remove('open');m.classList.add('hidden');m.setAttribute('aria-hidden','true');}
+root.addEventListener('click',event=>{const b=event.target.closest('button');if(!b||b.disabled)return;if(b.dataset.view){setView(b.dataset.view);return}if(b.dataset.quickAction){userAction(b.dataset.quickAction);return}if(b.dataset.quickInsurance){chooseInsurance(b.dataset.quickInsurance);return}if(b.dataset.chip){addChip(+b.dataset.chip,b);return}if(b.dataset.startpreset){$('startBalanceInput').value=b.dataset.startpreset;$('setupError').textContent='';return}if(b.dataset.action){userAction(b.dataset.action);return}if(b.dataset.insurance){chooseInsurance(b.dataset.insurance);return}if(b.dataset.side){ba.side=b.dataset.side;baRender();return}if(b.dataset.babet){ba.bet=+b.dataset.babet;baRender();return}if(b.dataset.rule){ba.rule=b.dataset.rule;baRender();return}if(b.dataset.answer!==undefined){answerQuiz(+b.dataset.answer);return}});
+$('removeGuest').onclick=()=>{if(!isBetting())return;npcCount=Math.max(0,npcCount-1);renderBJ();save()};$('addGuest').onclick=()=>{if(!isBetting())return;npcCount=Math.min(4,npcCount+1);renderBJ();save()};$('undoBet').onclick=()=>{if(isBetting()){pendingChips.pop();renderBJ()}};$('clearBet').onclick=()=>{if(isBetting()){pendingChips=[];renderBJ()}};$('presetBet').onclick=()=>addChip(100,null);$('dealBtn').onclick=beginRound;$('hintBtn').onclick=showHint;$('nextRoundBtn').onclick=prepareNext;$('soundToggle').onclick=()=>{soundOn=!soundOn;renderToggles();sound('tap');save()};$('mobileMenu').addEventListener('click',e=>{const b=e.target.closest('[data-menu-view]');if(b){closeMobileMenu();setView(b.dataset.menuView)}});$('mobileTopMenu').onclick=openMobileMenu;$('mobileMenuBtn').onclick=openMobileMenu;$('mobileHint').onclick=showHint;$('mobileLessGuest').onclick=()=>{$('removeGuest').click()};$('mobileMoreGuest').onclick=()=>{$('addGuest').click()};$('mobileMenuClose').onclick=closeMobileMenu;$('mobileMenuBackdrop').onclick=closeMobileMenu;$('mobileRulesBtn').onclick=()=>{closeMobileMenu();showModal('rulesOverlay')};$('mobileResetBtn').onclick=()=>{closeMobileMenu();showModal('resetOverlay')};$('mobileSoundBtn').onclick=()=>{$('soundToggle').click()};$('ruleOpen').onclick=()=>showModal('rulesOverlay');$('rulesClose').onclick=()=>closeModal('rulesOverlay');$('resetOpen').onclick=()=>showModal('resetOverlay');$('resetClose').onclick=()=>closeModal('resetOverlay');$('resetCancel').onclick=()=>closeModal('resetOverlay');$('resetConfirm').onclick=()=>{if(working)return;closeModal('resetOverlay');openSetup(false)};$('motionToggle').onchange=e=>{motionOff=e.target.checked;renderToggles();save()};['rulesOverlay','resetOverlay','setupOverlay'].forEach(id=>$(id).addEventListener('click',e=>{if(e.target===$(id))closeModal(id)}));window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();closeModal('rulesOverlay');closeModal('resetOverlay');closeSetup()}if(view==='blackjack'&&game.phase==='playing'&&game.current()?.seat.human&&!working&&!e.repeat&&!e.metaKey&&!e.ctrlKey){const a={h:'hit',s:'stand',d:'double',p:'split'}[e.key.toLowerCase()];if(a&&game.can(a))userAction(a)}});
+$('setupConfirm').onclick=startNewGame;$('setupCancel').onclick=closeSetup;$('setupContinue').onclick=()=>{configured=true;hasPriorProgress=false;closeModal('setupOverlay');renderBJ();save()};$('startBalanceInput').addEventListener('keydown',e=>{if(e.key==='Enter')startNewGame()});$('baDeal').onclick=baDeal;$('baReset').onclick=()=>{ba.balance=startingBalance;ba.rounds=0;ba.net=0;ba.player=[];ba.banker=[];ba.shoe=E.shuffle(Math.random,8);baRender();$('baResult').innerHTML='<b>已重置</b>虚拟余额恢复初始状态。'};$('quizNext').onclick=nextQuiz;$('labRun').onclick=runLab;$('termSearch').oninput=renderTerms;
+$('mobileModePicker').addEventListener('change',e=>setView(e.target.value));window.addEventListener('resize',placeGuestSeats);document.body.classList.add('single-screen');
+$('chipTray').innerHTML=DENOMS.map(n=>`<button class="chip-button" data-chip="${n}" aria-label="增加${n}点筹码">${chipMarkup(n)}<small>${fmt(n)}</small></button>`).join('');$('baBets').innerHTML=[10,25,50,100,200,500,1000,2000,5000].map(n=>`<button data-babet="${n}">${fmt(n)}</button>`).join('');
+load();renderToggles();renderBJ();baRender();renderQuiz();renderTerms();if(!configured)openSetup(true);
+// Testing hooks are read-only to production users and do not change public gameplay.
+window.__TABLE_LAB_TEST__={get game(){return game},get baccarat(){return ba},setPending,addChip,beginRound,chooseInsurance,userAction,prepareNext,renderBJ,get pendingChips(){return pendingChips.slice()},get initialBalance(){return startingBalance},startNewGame};
+})();
+</script></body></html>
